@@ -5,730 +5,1420 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Malhan Trading Company</title>
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Malhan">
-<meta name="theme-color" content="#2F6B3A">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#133D24">
+<title>Malhan Trading Company</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
 <style>
 :root{
-  --bg:#EEF1EA; --surface:#FFFFFF; --ink:#1C231E; --muted:#5E6A61; --line:#D9DED4;
-  --field:#2F6B3A; --field-ink:#FFFFFF; --field-soft:#E1EDDF; --mustard:#E3B23C; --mustard-soft:#FBF0D2;
-  --danger:#B3261E; --danger-soft:#F9E1DE;
+  --bg:#F3F5F2; --surface:#FFFFFF; --subtle:#F7F9F6; --ink:#142019; --ink-2:#38463D; --muted:#66736A;
+  --line:#E2E7E0; --line-2:#CDD5CA;
+  --brand:#1D6B3B; --brand-h:#175A31; --brand-50:#E7F1E9; --on-brand:#FFFFFF;
+  --side:#133D24; --side-ink:#D5E4D8; --side-muted:#8FAE97; --side-hover:#1B4D2F; --side-active:#22603A;
+  --accent:#D8A31C; --accent-ink:#8A6300; --accent-50:#FBF2D9;
+  --ok:#1D6B3B; --ok-50:#E7F1E9; --warn:#8A6300; --warn-50:#FBF2D9; --bad:#BF3A2F; --bad-50:#FBEAE8; --info:#2A5DA6; --info-50:#E8EEF8;
+  --shadow:0 1px 2px rgba(16,28,20,.05),0 1px 1px rgba(16,28,20,.03);
+  --shadow-lg:0 18px 48px rgba(12,24,16,.22);
+  --r-sm:8px; --r:10px; --r-lg:14px;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
-  --bg:#141915; --surface:#1D241F; --ink:#E8EDE6; --muted:#9AA79D; --line:#2F3A32;
-  --field:#5FAE6C; --field-ink:#0F1A11; --field-soft:#233526; --mustard:#E8BE55; --mustard-soft:#3A3120;
-  --danger:#F08A80; --danger-soft:#3D2220; color-scheme:dark;
+  --bg:#0F1511; --surface:#161E19; --subtle:#1A231D; --ink:#E6ECE7; --ink-2:#C3CEC6; --muted:#8D9B91; --line:#26312A; --line-2:#34423A;
+  --brand:#4FA66A; --brand-h:#5CB477; --brand-50:#1C3324; --on-brand:#08140C;
+  --side:#0B130E; --side-ink:#C9D8CD; --side-muted:#7C9585; --side-hover:#15241A; --side-active:#1C3324;
+  --accent:#E3B43E; --accent-ink:#E3B43E; --accent-50:#33290F;
+  --ok:#5CB477; --ok-50:#1C3324; --warn:#E3B43E; --warn-50:#33290F; --bad:#F0877C; --bad-50:#3A1F1C; --info:#86AEEA; --info-50:#1B2638;
+  --shadow:none; --shadow-lg:0 18px 48px rgba(0,0,0,.5); color-scheme:dark;
 }}
 :root[data-theme="dark"]{
-  --bg:#141915; --surface:#1D241F; --ink:#E8EDE6; --muted:#9AA79D; --line:#2F3A32;
-  --field:#5FAE6C; --field-ink:#0F1A11; --field-soft:#233526; --mustard:#E8BE55; --mustard-soft:#3A3120;
-  --danger:#F08A80; --danger-soft:#3D2220; color-scheme:dark;
+  --bg:#0F1511; --surface:#161E19; --subtle:#1A231D; --ink:#E6ECE7; --ink-2:#C3CEC6; --muted:#8D9B91; --line:#26312A; --line-2:#34423A;
+  --brand:#4FA66A; --brand-h:#5CB477; --brand-50:#1C3324; --on-brand:#08140C;
+  --side:#0B130E; --side-ink:#C9D8CD; --side-muted:#7C9585; --side-hover:#15241A; --side-active:#1C3324;
+  --accent:#E3B43E; --accent-ink:#E3B43E; --accent-50:#33290F;
+  --ok:#5CB477; --ok-50:#1C3324; --warn:#E3B43E; --warn-50:#33290F; --bad:#F0877C; --bad-50:#3A1F1C; --info:#86AEEA; --info-50:#1B2638;
+  --shadow:none; --shadow-lg:0 18px 48px rgba(0,0,0,.5); color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
-.num{font-variant-numeric:tabular-nums}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14.5px;line-height:1.45;-webkit-font-smoothing:antialiased}
 button,input,select,textarea{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--mustard);outline-offset:2px}
+a{color:var(--brand)}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+svg{flex:none}
 
-.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
-nav.side{position:sticky;top:env(safe-area-inset-top,0px);height:100vh;padding:24px 14px;border-right:1px solid var(--line);background:var(--surface)}
-.brand{padding:0 10px 22px}
-.brand b{display:block;font-size:20px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
-.brand span{color:var(--muted);font-size:13px}
-.navbtn{display:flex;gap:10px;align-items:center;width:100%;text-align:left;background:none;border:0;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:600;color:var(--muted)}
-.navbtn svg{width:20px;height:20px;flex:none}
-.navbtn[aria-current="page"]{background:var(--field-soft);color:var(--field)}
-main{padding:28px clamp(16px,4vw,40px) 120px;max-width:1100px;width:100%}
-nav.tabs{display:none}
+/* ---------- Shell ---------- */
+.shell{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:100vh}
+.side{position:sticky;top:0;height:100vh;background:var(--side);color:var(--side-ink);display:flex;flex-direction:column;padding:18px 12px 14px;overflow-y:auto}
+.org{display:flex;gap:11px;align-items:center;padding:4px 8px 20px}
+.logo{width:36px;height:36px;border-radius:9px;background:var(--accent);color:#1A1405;display:grid;place-items:center;font-weight:800;font-size:17px;letter-spacing:-.02em}
+.org b{display:block;font-size:14.5px;line-height:1.2;color:#fff}
+.org span{font-size:12.5px;color:var(--side-muted)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .org b{color:var(--ink)}}
+.navgroup{margin-bottom:14px}
+.navgroup h6{margin:0 0 4px;padding:0 10px;font-size:12px;font-weight:600;color:var(--side-muted)}
+.nav{display:flex;align-items:center;gap:10px;width:100%;border:0;background:none;color:var(--side-ink);padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:500;text-align:left;position:relative}
+.nav svg{width:18px;height:18px;opacity:.85}
+.nav:hover{background:var(--side-hover)}
+.nav[aria-current="page"]{background:var(--side-active);color:#fff;font-weight:600}
+.nav[aria-current="page"]::before{content:"";position:absolute;left:-12px;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:var(--accent)}
+.nav .count{margin-left:auto;font-size:12px;background:var(--bad);color:#fff;border-radius:99px;padding:0 7px;font-weight:700}
+.side-foot{margin-top:auto;border-top:1px solid rgba(255,255,255,.08);padding-top:12px}
+.me{display:flex;gap:10px;align-items:center;padding:6px 8px;border-radius:8px;cursor:pointer;border:0;background:none;color:inherit;width:100%;text-align:left}
+.me:hover{background:var(--side-hover)}
+.avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;background:var(--brand-50);color:var(--brand);flex:none}
+.side .avatar{background:var(--side-active);color:#fff}
+.me small{display:block;color:var(--side-muted);font-size:12px}
 
-h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:0 0 4px}
-h2{font-size:18px;font-weight:700;margin:28px 0 10px}
-.sub{color:var(--muted);margin:0 0 20px}
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:18px}
-.head .sub{margin:0}
+.top{position:sticky;top:0;z-index:6;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:12px;padding:12px clamp(16px,3vw,32px);min-height:60px}
+.crumb{font-size:13px;color:var(--muted)}
+.top h1{margin:0;font-size:19px;font-weight:700;letter-spacing:-.01em}
+.top .grow{flex:1;min-width:0}
+.sync{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);padding:5px 10px;border-radius:99px;background:var(--surface);border:1px solid var(--line);white-space:nowrap;cursor:pointer}
+.sync i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.sync.syncing i{background:var(--info);animation:pulse 1s infinite}
+.sync.offline i{background:var(--muted)}
+.sync.error i{background:var(--bad)}
+.sync.pending i{background:var(--accent)}
+@keyframes pulse{50%{opacity:.35}}
+.page{padding:22px clamp(16px,3vw,32px) 110px;max-width:1280px}
+.mtabs{display:none}
 
-.btn{border:0;border-radius:12px;padding:11px 18px;font-weight:700;cursor:pointer;background:var(--field);color:var(--field-ink)}
-.btn.ghost{background:transparent;color:var(--field);box-shadow:inset 0 0 0 1.5px var(--field)}
-.btn.quiet{background:var(--bg);color:var(--ink)}
-.btn.small{padding:7px 12px;font-size:14px;border-radius:9px}
-.btn.danger{background:var(--danger-soft);color:var(--danger)}
-.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-
-/* Home */
-.today{background:var(--field);color:var(--field-ink);border-radius:20px;padding:22px 24px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px}
-.today .big{font-size:40px;font-weight:800;letter-spacing:-.02em;line-height:1}
-.today small{display:block;opacity:.8;font-size:14px;margin-bottom:6px}
-.today .v{font-size:22px;font-weight:700}
-.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0 0}
-.quick button{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:700;cursor:pointer;text-align:left}
-.quick button span{display:block;color:var(--muted);font-weight:500;font-size:13px}
-.figures{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.figures div{background:var(--surface);padding:14px 16px}
-.figures small{color:var(--muted);font-size:13px;display:block}
-.figures b{font-size:20px}
-
-/* Lists */
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.item{display:flex;gap:12px;align-items:center;padding:13px 16px;border-top:1px solid var(--line)}
-.item:first-child{border-top:0}
-.item .main{flex:1;min-width:0}
-.item .t{font-weight:650}
-.item .m{color:var(--muted);font-size:14px;overflow:hidden;text-overflow:ellipsis}
-.item .amt{text-align:right;font-weight:700;white-space:nowrap}
-.item .amt small{display:block;font-weight:500;color:var(--muted);font-size:13px}
-.item.click{cursor:pointer}
-.item.click:hover{background:var(--bg)}
-.pos{color:var(--field)} .neg{color:var(--danger)}
-.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--bg);color:var(--muted)}
-.tag.warn{background:var(--mustard-soft);color:#8A6200}
-.tag.bad{background:var(--danger-soft);color:var(--danger)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag.warn{color:var(--mustard)}}
-.empty{padding:28px 16px;text-align:center;color:var(--muted)}
-.x{background:none;border:0;color:var(--muted);cursor:pointer;padding:6px;border-radius:8px;font-size:18px;line-height:1}
-.x:hover{color:var(--danger);background:var(--danger-soft)}
-
-/* Stock bars */
-.stock{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr auto;gap:12px;align-items:center;padding:14px 16px;border-top:1px solid var(--line)}
-.stock:first-child{border-top:0}
-.stock.headrow{font-size:13px;color:var(--muted);font-weight:600;padding-top:10px;padding-bottom:10px}
-.bag{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1}
-.meter{height:6px;border-radius:9px;background:var(--bg);margin-top:6px;overflow:hidden}
-.meter i{display:block;height:100%;background:var(--field);border-radius:9px}
-.meter i.low{background:var(--danger)}
-
-.tablewrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
-th:first-child,td:first-child{text-align:left}
-th{color:var(--muted);font-weight:600;font-size:13px}
-tfoot td{font-weight:800;border-bottom:0}
-
-.seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:3px}
-.seg button{border:0;background:none;padding:7px 14px;border-radius:9px;font-weight:600;cursor:pointer;color:var(--muted)}
-.seg button[aria-pressed="true"]{background:var(--field-soft);color:var(--field)}
-
-.banner{background:var(--mustard-soft);border-radius:12px;padding:12px 16px;margin-bottom:16px;font-weight:500}
-
-/* Sheet */
-dialog{border:0;padding:0;background:var(--surface);color:var(--ink);border-radius:20px;width:min(640px,calc(100vw - 24px));max-height:calc(100vh - 40px);box-shadow:0 20px 60px rgba(20,30,20,.35)}
-dialog::backdrop{background:rgba(15,22,16,.45)}
-.sheet{display:flex;flex-direction:column;max-height:calc(100vh - 40px)}
-.sheet header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px 8px}
-.sheet header h3{margin:0;font-size:21px;font-weight:800}
-.sheet .body{padding:8px 20px 12px;overflow:auto}
-.sheet footer{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.total{font-size:22px;font-weight:800}
-.total small{display:block;font-size:13px;color:var(--muted);font-weight:500}
+/* ---------- Buttons & inputs ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid transparent;border-radius:var(--r-sm);padding:8px 14px;font-weight:600;cursor:pointer;background:var(--brand);color:var(--on-brand);min-height:38px;white-space:nowrap;text-decoration:none;font-size:14px}
+.btn:hover{background:var(--brand-h)}
+.btn svg{width:16px;height:16px}
+.btn.sec{background:var(--surface);color:var(--ink);border-color:var(--line-2);box-shadow:var(--shadow)}
+.btn.sec:hover{background:var(--subtle)}
+.btn.ghost{background:transparent;color:var(--ink-2)}
+.btn.ghost:hover{background:var(--subtle)}
+.btn.danger{background:var(--surface);color:var(--bad);border-color:var(--line-2)}
+.btn.danger:hover{background:var(--bad-50)}
+.btn.sm{padding:5px 10px;min-height:32px;font-size:13px}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.icon-btn{border:0;background:none;color:var(--muted);padding:6px;border-radius:7px;cursor:pointer;display:inline-grid;place-items:center}
+.icon-btn:hover{background:var(--subtle);color:var(--ink)}
+.icon-btn svg{width:18px;height:18px}
+input,select,textarea{width:100%;padding:8px 11px;border:1px solid var(--line-2);border-radius:var(--r-sm);background:var(--surface);min-height:40px;font-size:15px}
+input:focus,select:focus,textarea:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px var(--brand-50)}
+input[type=checkbox]{width:auto;min-height:0}
 label.f{display:block;margin-bottom:12px}
-label.f>span{display:block;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:5px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 12px}
-input,select,textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);min-height:44px}
-input:focus,select:focus,textarea:focus{border-color:var(--field);outline:none}
-.lines{border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:12px;background:var(--bg)}
-.line{display:grid;grid-template-columns:1.6fr .8fr 1fr auto;gap:8px;align-items:end;margin-bottom:8px}
-.line label{font-size:12px;color:var(--muted);font-weight:600}
-.line .hint{grid-column:1/-1;font-size:13px;color:var(--muted);margin-top:-2px}
-.line .hint.bad{color:var(--danger);font-weight:600}
-.err{color:var(--danger);font-weight:600;font-size:14px}
+label.f>span{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:5px}
+label.f>small{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 12px}
 
-@media (max-width:820px){
-  .app{grid-template-columns:1fr}
-  nav.side{display:none}
-  main{padding:18px 16px 110px}
-  nav.tabs{display:grid;grid-template-columns:repeat(6,1fr);position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));z-index:5}
-  nav.tabs .navbtn{flex-direction:column;gap:2px;font-size:11px;padding:6px 2px;justify-content:center;text-align:center}
-  .today{grid-template-columns:1fr 1fr}
-  .today>div:first-child{grid-column:1/-1}
-  .quick{grid-template-columns:1fr 1fr}
-  .figures{grid-template-columns:1fr 1fr}
-  .stock{grid-template-columns:1.3fr 1fr auto}
-  .stock .hide-sm{display:none}
-  h1{font-size:26px}
-  dialog{width:100vw;max-width:100vw;margin:auto 0 0;border-radius:20px 20px 0 0;max-height:92vh}
-  .sheet{max-height:92vh}
-  .sheet footer{padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
-  .line{grid-template-columns:1fr 1fr auto}
+/* ---------- Surfaces ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow)}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.card-h h3{margin:0;font-size:15px;font-weight:650}
+.card-h .note{color:var(--muted);font-size:13px}
+.card-b{padding:16px}
+.stack{display:grid;gap:16px}
+.cols{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{padding:14px 16px}
+.kpi .l{color:var(--muted);font-size:13px;font-weight:500}
+.kpi .v{font-size:24px;font-weight:700;letter-spacing:-.02em;margin-top:4px}
+.kpi .d{font-size:12.5px;margin-top:4px;color:var(--muted)}
+.kpi .d b{font-weight:600}
+.up{color:var(--ok)} .down{color:var(--bad)}
+.hero{display:grid;grid-template-columns:1.2fr 2fr;gap:0;overflow:hidden}
+.hero-l{padding:18px 20px;background:var(--brand);color:var(--on-brand)}
+.hero-l .l{opacity:.85;font-size:13px}
+.hero-l .v{font-size:34px;font-weight:750;letter-spacing:-.02em;margin:4px 0 8px;line-height:1.1}
+.hero-l .s{display:flex;gap:18px;font-size:13px;opacity:.92;flex-wrap:wrap}
+.hero-r{padding:14px 18px 8px}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;white-space:nowrap;background:var(--subtle);color:var(--ink-2);border:1px solid var(--line)}
+.pill.ok{background:var(--ok-50);color:var(--ok);border-color:transparent}
+.pill.warn{background:var(--warn-50);color:var(--warn);border-color:transparent}
+.pill.bad{background:var(--bad-50);color:var(--bad);border-color:transparent}
+.pill.info{background:var(--info-50);color:var(--info);border-color:transparent}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.right{text-align:right}
+.banner{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--accent-50);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:var(--r);padding:10px 14px;margin-bottom:16px;font-weight:500}
+.banner.info{background:var(--info-50);border-color:color-mix(in srgb,var(--info) 30%,transparent)}
+
+/* ---------- Toolbar ---------- */
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.toolbar .search{position:relative;flex:1;min-width:200px;max-width:360px}
+.toolbar .search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted)}
+.toolbar .search input{padding-left:34px}
+.toolbar select{width:auto;min-width:130px}
+.seg{display:inline-flex;background:var(--subtle);border:1px solid var(--line);border-radius:var(--r-sm);padding:3px;gap:2px}
+.seg button{border:0;background:none;padding:5px 12px;border-radius:6px;font-weight:600;cursor:pointer;color:var(--muted);font-size:13.5px}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.summary{display:flex;gap:22px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--subtle);border-radius:var(--r-lg) var(--r-lg) 0 0}
+.summary div{font-size:13px;color:var(--muted)}
+.summary b{display:block;color:var(--ink);font-size:16px}
+
+/* ---------- Tables ---------- */
+.tw{overflow-x:auto}
+table.t{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+.t th{position:sticky;top:0;background:var(--subtle);text-align:left;font-weight:600;color:var(--muted);font-size:12.5px;padding:9px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+.t td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+.t tr:last-child td{border-bottom:0}
+.t th.n,.t td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.t tbody tr.click{cursor:pointer}
+.t tbody tr.click:hover td{background:var(--subtle)}
+.t .primary{font-weight:600}
+.only-m{display:none}
+.t .sub{color:var(--muted);font-size:12.5px;max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.t tfoot td{font-weight:700;background:var(--subtle);border-top:1px solid var(--line)}
+.empty{padding:40px 16px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+.meter{height:6px;border-radius:9px;background:var(--subtle);border:1px solid var(--line);overflow:hidden;width:110px;margin-top:5px}
+.meter i{display:block;height:100%;background:var(--brand)}
+.meter i.low{background:var(--accent)} .meter i.out{background:var(--bad)}
+.list .row{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--line)}
+.list .row:last-child{border-bottom:0}
+.list .row .grow{flex:1;min-width:0}
+.list .row.click{cursor:pointer}.list .row.click:hover{background:var(--subtle)}
+.chart{width:100%;height:auto;display:block}
+.chart text{fill:var(--muted);font-size:11px}
+
+/* ---------- Menu, dialog, toast ---------- */
+.menu{position:fixed;z-index:30;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-lg);padding:6px;min-width:220px}
+.menu button{display:flex;gap:10px;align-items:center;width:100%;text-align:left;border:0;background:none;padding:9px 10px;border-radius:7px;cursor:pointer;font-weight:500}
+.menu button:hover{background:var(--subtle)}
+.menu button svg{width:17px;height:17px;color:var(--muted)}
+.menu hr{border:0;border-top:1px solid var(--line);margin:5px 0}
+.menu .kbd{margin-left:auto;color:var(--muted);font-size:12px}
+dialog{border:0;padding:0;background:var(--surface);color:var(--ink);border-radius:16px;width:min(720px,calc(100vw - 24px));max-height:calc(100vh - 40px);box-shadow:var(--shadow-lg)}
+dialog.narrow{width:min(480px,calc(100vw - 24px))}
+dialog::backdrop{background:rgba(10,20,14,.5)}
+.sheet{display:flex;flex-direction:column;max-height:calc(100vh - 40px)}
+.sheet>header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:18px 20px 12px;border-bottom:1px solid var(--line)}
+.sheet>header h3{margin:0;font-size:18px;font-weight:700}
+.sheet>header p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.sheet .body{padding:16px 20px;overflow:auto}
+.sheet>footer{padding:12px 20px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;background:var(--subtle);border-radius:0 0 16px 16px}
+.sheet .total{font-size:20px;font-weight:750}
+.sheet .total small{display:block;font-size:12.5px;color:var(--muted);font-weight:500}
+.err{color:var(--bad);font-weight:600;font-size:13.5px;min-height:1px}
+.lines{border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
+.lines-h,.line{display:grid;grid-template-columns:minmax(0,2fr) 90px 120px 110px 36px;gap:8px;align-items:center;padding:8px 10px}
+.lines-h{background:var(--subtle);font-size:12.5px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line)}
+.line{border-bottom:1px solid var(--line)}
+.line:last-of-type{border-bottom:0}
+.line .amt{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.line .hint{grid-column:1/-1;font-size:12.5px;color:var(--muted);margin-top:-2px}
+.line .hint.bad{color:var(--bad);font-weight:600}
+.line input,.line select{min-height:36px}
+.bill{border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.bill-h{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px dashed var(--line-2);padding-bottom:12px;margin-bottom:12px}
+.bill-h b{font-size:17px}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;z-index:40;box-shadow:var(--shadow-lg);max-width:calc(100vw - 32px)}
+.toast[hidden]{display:none}
+
+/* ---------- Auth ---------- */
+.auth{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
+.auth-l{background:var(--side);color:var(--side-ink);padding:48px;display:flex;flex-direction:column;justify-content:space-between}
+.auth-l h2{font-size:34px;line-height:1.15;color:#fff;margin:0 0 12px;letter-spacing:-.02em;max-width:14ch}
+.auth-l p{max-width:40ch;color:var(--side-muted);margin:0}
+.auth-r{display:grid;place-items:center;padding:32px 20px}
+.auth-card{width:min(400px,100%)}
+.auth-card h3{font-size:22px;margin:0 0 4px}
+.auth-card .muted{margin:0 0 20px}
+.link{border:0;background:none;color:var(--brand);font-weight:600;cursor:pointer;padding:0}
+pre.code{background:var(--subtle);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:13px}
+
+/* ---------- Mobile ---------- */
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .side{display:none}
+  .top-in{padding:10px 16px;min-height:54px}
+  .top h1{font-size:18px}
+  .crumb{display:none}
+  .page{padding:14px 14px 110px}
+  .mtabs{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:8;background:var(--surface);border-top:1px solid var(--line);padding:4px 4px calc(4px + env(safe-area-inset-bottom,0px))}
+  .mtabs button{display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:none;color:var(--muted);font-size:11px;font-weight:600;padding:6px 2px;border-radius:8px;cursor:pointer}
+  .mtabs button svg{width:22px;height:22px}
+  .mtabs button[aria-current="page"]{color:var(--brand)}
+  .kpis{grid-template-columns:1fr 1fr}
+  .kpi .v{font-size:20px}
+  .cols{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr}
+  .toolbar .search{max-width:none;flex-basis:100%}
+  .g3{grid-template-columns:1fr 1fr}
+  .auth{grid-template-columns:1fr}
+  .auth-l{display:none}
+  /* tables become cards */
+  table.t.stackable thead{display:none}
+  table.t.stackable,table.t.stackable tbody,table.t.stackable tr,table.t.stackable td{display:block;width:100%}
+  table.t.stackable tr{padding:10px 14px;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
+  table.t.stackable td{border:0;padding:2px 0;display:flex;justify-content:space-between;gap:12px;text-align:right}
+  table.t.stackable td::before{content:attr(data-l);color:var(--muted);font-size:12.5px;text-align:left;font-weight:500}
+  table.t.stackable td.lead{display:block;text-align:left;padding-bottom:4px;order:-1}
+  table.t.stackable td.lead::before{display:none}
+  table.t.stackable td.hide-m{display:none}
+  table.t.stackable tfoot{display:block}
+  .t .sub{max-width:none;white-space:normal}
+  .only-m{display:block}
+  .toolbar .seg{overflow-x:auto;max-width:100%;scrollbar-width:none}
+  .toolbar .seg::-webkit-scrollbar{display:none}
+  .seg button{white-space:nowrap}
+  table.t.stackable td>span.cell{text-align:right}
+  dialog,dialog.narrow{width:100vw;max-width:100vw;margin:auto 0 0;border-radius:16px 16px 0 0;max-height:94vh}
+  .sheet{max-height:94vh}
+  .sheet>footer{border-radius:0;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+  .lines-h{display:none}
+  .line{grid-template-columns:1fr 1fr 36px;row-gap:6px}
   .line .p{grid-column:1/-1}
+  .line .amt{grid-column:1/3;text-align:left}
+  .toast{bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  .side,.top,.mtabs,.sheet>header .icon-btn,.sheet>footer,.toast{display:none!important}
+  body{background:#fff}
+  dialog{position:static;box-shadow:none;width:100%;max-height:none}
+  .sheet .body{overflow:visible}
+  body.printing .shell{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="app">
-  <nav class="side" id="side"></nav>
-  <main id="main"><p class="sub">Loading…</p></main>
-</div>
-<nav class="tabs" id="tabs"></nav>
-<dialog id="dlg"><form class="sheet" id="sheet" method="dialog"></form></dialog>
+<div id="root"></div>
+<dialog id="dlg"><form class="sheet" id="sheet" method="dialog" novalidate></form></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
+<script src="config.js"></script>
+<script src="vendor/supabase.js"></script>
 <script>
-/* ---------- Helpers ---------- */
+"use strict";
+/* =====================================================================
+   Malhan Trading Company — shop management
+   Offline-first: every change is written to this device first, then
+   synced to the shop's Supabase database and pushed live to other devices.
+   ===================================================================== */
+
+/* ---------- Utilities ---------- */
+const CFG = window.MALHAN_CONFIG || {};
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const inr = n => "₹" + (Math.round((+n||0)*100)/100).toLocaleString("en-IN",{maximumFractionDigits:2});
-const inr0 = n => "₹" + Math.round(+n||0).toLocaleString("en-IN");
 const num = v => { const n = parseFloat(v); return isFinite(n) ? n : 0; };
-const today = () => { const d=new Date(); d.setMinutes(d.getMinutes()-d.getTimezoneOffset()); return d.toISOString().slice(0,10); };
-const monthOf = d => (d||"").slice(0,7);
-const fmtDate = d => { if(!d) return ""; const [y,m,dd]=d.split("-"); return new Date(+y,+m-1,+dd).toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"}); };
-const fmtMonth = m => { const [y,mm]=m.split("-"); return new Date(+y,+mm-1,1).toLocaleDateString("en-IN",{month:"long",year:"numeric"}); };
-const byDateDesc = (a,b) => (b.date||"").localeCompare(a.date||"") || (b.createdAt||0)-(a.createdAt||0);
+const r2 = n => Math.round((+n || 0) * 100) / 100;
+const inr = n => "₹" + r2(n).toLocaleString("en-IN", {minimumFractionDigits:0, maximumFractionDigits:2});
+const inr0 = n => (n < 0 ? "−₹" : "₹") + Math.round(Math.abs(+n || 0)).toLocaleString("en-IN");
+const today = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0,10); };
+const addDays = (iso, n) => { const [y,m,d] = iso.split("-").map(Number); const x = new Date(Date.UTC(y, m-1, d + n)); return x.toISOString().slice(0,10); };
+const monthOf = d => (d || "").slice(0,7);
+const prevMonth = m => { const [y,mm] = m.split("-").map(Number); const d = new Date(Date.UTC(y, mm-2, 1)); return d.toISOString().slice(0,7); };
+const fmtDate = d => { if(!d) return ""; const [y,m,dd] = d.split("-"); return new Date(+y, +m-1, +dd).toLocaleDateString("en-IN", {day:"numeric", month:"short", year:"numeric"}); };
+const fmtDateShort = d => { if(!d) return ""; const [y,m,dd] = d.split("-"); return new Date(+y, +m-1, +dd).toLocaleDateString("en-IN", {day:"numeric", month:"short"}); };
+const fmtMonth = m => { const [y,mm] = m.split("-"); return new Date(+y, +mm-1, 1).toLocaleDateString("en-IN", {month:"long", year:"numeric"}); };
+const fmtWhen = t => { if(!t) return ""; const d = new Date(t), s = (Date.now() - d) / 1000;
+  if(s < 60) return "just now"; if(s < 3600) return Math.floor(s/60) + " min ago"; if(s < 86400) return Math.floor(s/3600) + " h ago";
+  return d.toLocaleDateString("en-IN", {day:"numeric", month:"short"}) + ", " + d.toLocaleTimeString("en-IN", {hour:"numeric", minute:"2-digit"}); };
+const byDateDesc = (a,b) => (b.date || "").localeCompare(a.date || "") || String(b._at || "").localeCompare(String(a._at || ""));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+const initials = n => (n || "?").trim().split(/\s+/).slice(0,2).map(w => w[0]).join("").toUpperCase();
+const billNo = s => "MTC-" + String(s.id).slice(-6).toUpperCase();
 
-const COLS = ["products","suppliers","purchases","sales","customers","payments","expenses","adjustments"];
-const S = {}; COLS.forEach(c => S[c] = []);
-let db = null, dbState = "loading", view = "home", reportMonth = monthOf(today()), khataTab = "customers";
+function toast(msg, ms = 2600){ const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, ms); }
 
 /* ---------- Icons ---------- */
-const I = {
-  home:'<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
-  sell:'<path d="M4 7h16l-1.5 11a2 2 0 0 1-2 1.7h-9A2 2 0 0 1 5.5 18z"/><path d="M9 7a3 3 0 0 1 6 0"/>',
-  buy:'<path d="M3 17V6h11v11"/><path d="M14 10h4l3 3v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
-  stock:'<path d="M5 8l7-4 7 4v8l-7 4-7-4z"/><path d="M5 8l7 4 7-4M12 12v8"/>',
-  khata:'<path d="M6 3h11a2 2 0 0 1 2 2v16l-3-2-3 2-3-2-3 2V5a2 2 0 0 1 2-2z"/><path d="M9 8h6M9 12h6"/>',
-  more:'<circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/>'
+const IC = {
+  dashboard:'<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>',
+  sales:'<path d="M5 7h14l-1.3 11.1a2 2 0 0 1-2 1.9H8.3a2 2 0 0 1-2-1.9z"/><path d="M9 7a3 3 0 0 1 6 0"/>',
+  purchases:'<path d="M2 17V6h12v11"/><path d="M14 10h4.5L22 13.5V17h-8"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/>',
+  stock:'<path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/>',
+  khata:'<path d="M6 3h11a2 2 0 0 1 2 2v16l-3-1.8-3 1.8-3-1.8L7 21V5a2 2 0 0 1-1-2z"/><path d="M10 8h5M10 12h5"/>',
+  expenses:'<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/>',
+  reports:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  products:'<path d="M20 7l-8-4-8 4 8 4z"/><path d="M4 7v10l8 4 8-4V7"/>',
+  suppliers:'<path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/>',
+  team:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/>',
+  activity:'<path d="M3 12h4l3-8 4 16 3-8h4"/>',
+  backup:'<path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>',
+  more:'<circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
+  x:'<path d="M6 6l12 12M18 6L6 18"/>',
+  rupee:'<path d="M6 4h12M6 9h12M9 4c6 0 6 10 0 10H6l8 7"/>',
+  trash:'<path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/>',
+  whatsapp:'<path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/>',
+  print:'<path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
+  edit:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>',
+  logout:'<path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/><path d="M10 16l-4-4 4-4M6 12h10"/>',
+  refresh:'<path d="M20 11a8 8 0 0 0-14.9-3M4 4v4h4M4 13a8 8 0 0 0 14.9 3M20 20v-4h-4"/>',
+  adjust:'<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>'
 };
-const icon = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
-const NAV = [["home","Home"],["sales","Sell"],["purchases","Buy"],["stock","Stock"],["khata","Khata"],["more","More"]];
-const MORE_VIEWS = ["more","expenses","reports","products","suppliers","backup"];
+const icon = (k, cls = "") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k] || ""}</svg>`;
 
-function drawNav(){
-  const cur = MORE_VIEWS.includes(view) ? "more" : view;
-  const btns = NAV.map(([k,l]) => `<button class="navbtn" data-nav="${k}" ${cur===k?'aria-current="page"':''}>${icon(k==="sales"?"sell":k==="purchases"?"buy":k)}<span>${l}</span></button>`).join("");
-  $("#side").innerHTML = `<div class="brand"><b>Malhan Trading Co.</b><span>Fertilizer &amp; seed</span></div>${btns}`;
-  $("#tabs").innerHTML = btns;
+/* ---------- State ---------- */
+const COLS = ["products","suppliers","purchases","sales","customers","payments","expenses","adjustments"];
+const S = {}; COLS.forEach(c => S[c] = []);
+const REC = new Map();                       // id -> local record (server shape + dirty/v)
+const APP = {
+  sb: null, user: null, member: null, shop: null, members: [],
+  view: "dashboard", ledger: null,
+  sync: { state: "idle", last: 0, error: "" },
+  f: { q: "", period: "month", status: "all", khata: "customers", reportMonth: monthOf(today()), expPeriod: "month" }
+};
+const role = () => APP.member?.role || "staff";
+const isOwner = () => role() === "owner";
+const isManager = () => role() === "owner" || role() === "manager";
+const seesProfit = () => isManager();
+const memberName = id => { if(!id) return "—"; if(id === APP.user?.id) return "You"; return APP.members.find(m => m.user_id === id)?.display_name || "Former member"; };
+function canChange(x){
+  if(isManager()) return true;
+  if(!x || x._by !== APP.user?.id) return false;
+  return !x._at || (Date.now() - new Date(x._at).getTime()) < 24*3600*1000;
 }
-document.addEventListener("click", e => {
-  const n = e.target.closest("[data-nav]"); if(n){ go(n.dataset.nav); return; }
-  const a = e.target.closest("[data-act]"); if(a){ ACT[a.dataset.act]?.(a.dataset.id, a); }
-});
-function go(v){ view = v; render(); window.scrollTo(0,0); }
+
+/* ---------- Local database (IndexedDB) ---------- */
+let idb = null;
+const idbName = () => "malhan-" + APP.shop.id + "-" + APP.user.id;
+function idbOpen(name){ return new Promise((res, rej) => { const r = indexedDB.open(name, 1);
+  r.onupgradeneeded = () => { r.result.createObjectStore("records", {keyPath:"id"}); r.result.createObjectStore("meta"); };
+  r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }); }
+function idbAll(){ return new Promise((res, rej) => { const q = idb.transaction("records").objectStore("records").getAll(); q.onsuccess = () => res(q.result); q.onerror = () => rej(q.error); }); }
+function idbPut(recs){ return new Promise((res, rej) => { if(!recs.length) return res(); const tx = idb.transaction("records", "readwrite"); const st = tx.objectStore("records"); recs.forEach(r => st.put(r)); tx.oncomplete = () => res(); tx.onerror = () => rej(tx.error); }); }
+function idbDel(ids){ return new Promise((res, rej) => { const tx = idb.transaction("records", "readwrite"); ids.forEach(i => tx.objectStore("records").delete(i)); tx.oncomplete = () => res(); tx.onerror = () => rej(tx.error); }); }
+function metaGet(k){ return new Promise(res => { const q = idb.transaction("meta").objectStore("meta").get(k); q.onsuccess = () => res(q.result); q.onerror = () => res(undefined); }); }
+function metaSet(k, v){ return new Promise(res => { const tx = idb.transaction("meta", "readwrite"); tx.objectStore("meta").put(v, k); tx.oncomplete = () => res(); tx.onerror = () => res(); }); }
+
+function rebuild(){
+  COLS.forEach(c => S[c] = []);
+  for(const r of REC.values()){
+    if(r.deleted || !S[r.collection]) continue;
+    S[r.collection].push({...r.data, id: r.id, _by: r.created_by, _at: r.created_at, _ub: r.updated_by, _uat: r.updated_at, _dirty: !!r.dirty});
+  }
+}
+const pendingCount = () => { let n = 0; for(const r of REC.values()) if(r.dirty) n++; return n; };
+
+async function save(col, data, id){
+  id = id || uid();
+  const prev = REC.get(id);
+  const clean = {}; Object.keys(data).forEach(k => { if(k !== "id" && !k.startsWith("_") && data[k] !== undefined) clean[k] = data[k]; });
+  const rec = {
+    id, collection: col, data: clean, deleted: false,
+    created_by: prev?.created_by || APP.user.id, created_at: prev?.created_at || new Date().toISOString(),
+    updated_by: APP.user.id, updated_at: prev?.updated_at || null,
+    dirty: 1, v: (prev?.v || 0) + 1
+  };
+  REC.set(id, rec); await idbPut([rec]); rebuild(); scheduleRender(); schedulePush();
+  return id;
+}
+async function removeRec(id){
+  const prev = REC.get(id); if(!prev) return;
+  const rec = {...prev, deleted: true, dirty: 1, v: (prev.v || 0) + 1, updated_by: APP.user.id};
+  REC.set(id, rec); await idbPut([rec]); rebuild(); scheduleRender(); schedulePush();
+}
+
+/* ---------- Sync engine ---------- */
+let pushing = false, pushAgain = false, pushTimer = null, pulling = false, channel = null;
+const online = () => navigator.onLine !== false;
+function setSync(state, error = ""){ APP.sync.state = state; APP.sync.error = error; if(state === "ok") APP.sync.last = Date.now(); drawSync(); }
+function schedulePush(){ clearTimeout(pushTimer); pushTimer = setTimeout(push, 400); drawSync(); }
+const isPermErr = e => e && (e.code === "42501" || /row-level security|permission denied/i.test(e.message || ""));
+
+async function push(){
+  if(!APP.sb || !APP.shop || !online()) { drawSync(); return; }
+  if(pushing){ pushAgain = true; return; }
+  const dirty = [...REC.values()].filter(r => r.dirty);
+  if(!dirty.length){ if(APP.sync.state !== "error") setSync("ok"); return; }
+  pushing = true; setSync("syncing");
+  try{
+    for(let i = 0; i < dirty.length; i += 200){
+      const batch = dirty.slice(i, i + 200);
+      const sentV = new Map(batch.map(r => [r.id, r.v]));
+      const { data, error } = await APP.sb.from("records")
+        .upsert(batch.map(r => ({shop_id: APP.shop.id, id: r.id, collection: r.collection, data: r.data, deleted: !!r.deleted})), {onConflict: "shop_id,id"})
+        .select();
+      if(error){ if(isPermErr(error)) await pushOneByOne(batch); else throw error; continue; }
+      await acceptServerRows(data || [], sentV);
+    }
+    setSync("ok");
+  }catch(e){ console.warn("push failed", e); setSync("error", e.message || "Sync failed"); }
+  finally{ pushing = false; rebuild(); scheduleRender(); if(pushAgain){ pushAgain = false; push(); } }
+}
+async function acceptServerRows(rows, sentV){
+  const out = [];
+  for(const row of rows){
+    const local = REC.get(row.id);
+    if(local && sentV && local.v !== sentV.get(row.id)){
+      Object.assign(local, {created_by: row.created_by, created_at: row.created_at, updated_at: row.updated_at}); out.push(local);
+    } else { const rec = {...row, dirty: 0, v: local?.v || 0}; delete rec.shop_id; REC.set(row.id, rec); out.push(rec); }
+  }
+  await idbPut(out);
+}
+async function pushOneByOne(batch){
+  let rejected = 0;
+  for(const r of batch){
+    const v = r.v;
+    const { data, error } = await APP.sb.from("records")
+      .upsert({shop_id: APP.shop.id, id: r.id, collection: r.collection, data: r.data, deleted: !!r.deleted}, {onConflict: "shop_id,id"}).select();
+    if(!error){ await acceptServerRows(data || [], new Map([[r.id, v]])); continue; }
+    if(!isPermErr(error)) throw error;
+    rejected++;
+    const { data: srv } = await APP.sb.from("records").select("*").eq("shop_id", APP.shop.id).eq("id", r.id).maybeSingle();
+    if(srv){ const rec = {...srv, dirty: 0, v: 0}; delete rec.shop_id; REC.set(r.id, rec); await idbPut([rec]); }
+    else { REC.delete(r.id); await idbDel([r.id]); }
+  }
+  if(rejected) toast(`${rejected} change${rejected > 1 ? "s were" : " was"} not allowed for your role and ${rejected > 1 ? "were" : "was"} undone.`, 5000);
+}
+async function pull(){
+  if(!APP.sb || !APP.shop || !online() || pulling) return;
+  pulling = true;
+  try{
+    let cursor = await metaGet("cursor");
+    let since = cursor ? new Date(new Date(cursor).getTime() - 120000).toISOString() : "1970-01-01T00:00:00Z";
+    for(let guard = 0; guard < 200; guard++){
+      const { data, error } = await APP.sb.from("records").select("*").eq("shop_id", APP.shop.id)
+        .gt("updated_at", since).order("updated_at", {ascending: true}).limit(1000);
+      if(error) throw error;
+      await applyRemote(data || []);
+      if(data && data.length){ since = data[data.length - 1].updated_at; if(!cursor || new Date(since) > new Date(cursor)) cursor = since; }
+      if(!data || data.length < 1000) break;
+    }
+    if(cursor) await metaSet("cursor", cursor);
+    if(!pendingCount()) setSync("ok");
+  }catch(e){ console.warn("pull failed", e); setSync("error", e.message || "Sync failed"); }
+  finally{ pulling = false; }
+}
+async function applyRemote(rows){
+  const out = [];
+  for(const row of rows){
+    const local = REC.get(row.id);
+    if(local && local.dirty) continue;
+    if(local && local.updated_at && new Date(local.updated_at) >= new Date(row.updated_at)) continue;
+    const rec = {...row, dirty: 0, v: local?.v || 0}; delete rec.shop_id;
+    REC.set(row.id, rec); out.push(rec);
+  }
+  if(out.length){ await idbPut(out); rebuild(); scheduleRender();
+    if(out.some(r => (r.created_by && !APP.members.some(m => m.user_id === r.created_by)) || (r.updated_by && !APP.members.some(m => m.user_id === r.updated_by)))) refreshMembersSoon(); }
+}
+let membersAt = 0, unknownAt = 0;
+function refreshMembersSoon(){ if(Date.now() - unknownAt < 15000) return; unknownAt = Date.now(); loadMembers(); }
+function startRealtime(){
+  if(channel) APP.sb.removeChannel(channel);
+  channel = APP.sb.channel("records-" + APP.shop.id)
+    .on("postgres_changes", {event: "*", schema: "public", table: "records", filter: "shop_id=eq." + APP.shop.id},
+        p => { if(p.new && p.new.id) applyRemote([p.new]); })
+    .subscribe();
+}
+async function syncNow(){ await push(); await pull(); if(Date.now() - membersAt > 300000){ membersAt = Date.now(); loadMembers(); } }
+async function loadMembers(){
+  if(!online()) return;
+  const { data } = await APP.sb.from("members").select("*").eq("shop_id", APP.shop.id).order("joined_at");
+  if(data){ APP.members = data; await metaSet("members", data);
+    const mine = data.find(m => m.user_id === APP.user.id);
+    if(mine && !mine.active){ alert("Your access to this shop has been removed."); await signOut(true); return; }
+    if(mine){ APP.member = {...APP.member, ...mine}; cacheMembership(); }
+    scheduleRender(); }
+}
+window.addEventListener("online", () => { drawSync(); syncNow(); loadMembers(); });
+window.addEventListener("offline", drawSync);
+document.addEventListener("visibilitychange", () => { if(document.visibilityState === "visible" && APP.shop) syncNow(); });
+setInterval(() => { if(APP.shop && document.visibilityState === "visible") syncNow(); }, 60000);
 
 /* ---------- Calculations ---------- */
 const P = id => S.products.find(p => p.id === id);
-const pname = id => P(id)?.name || "Deleted product";
-const supName = id => S.suppliers.find(s => s.id === id)?.name || "—";
-const custName = id => S.customers.find(c => c.id === id)?.name || "";
-const itemsQty = items => (items||[]).reduce((a,i)=>a+num(i.qty),0);
-const purSub = p => (p.items||[]).reduce((a,i)=>a+num(i.qty)*num(i.rate),0);
+const pname = id => P(id)?.name || "Unknown product";
+const supName = id => S.suppliers.find(s => s.id === id)?.name || "Unknown supplier";
+const cust = id => S.customers.find(c => c.id === id);
+const custName = id => cust(id)?.name || "";
+const saleWho = s => s.customerId ? (custName(s.customerId) || "Unknown customer") : "Walk-in customer";
+const itemsQty = items => (items || []).reduce((a, i) => a + num(i.qty), 0);
+const purSub = p => (p.items || []).reduce((a, i) => a + num(i.qty) * num(i.rate), 0);
 const purTotal = p => purSub(p) + num(p.freight) + num(p.other);
-const saleSub = s => (s.items||[]).reduce((a,i)=>a+num(i.qty)*num(i.rate),0);
+const saleSub = s => (s.items || []).reduce((a, i) => a + num(i.qty) * num(i.rate), 0);
 const saleTotal = s => saleSub(s) - num(s.discount);
-const saleCost = s => (s.items||[]).reduce((a,i)=>a+num(i.qty)*num(i.cost),0);
+const saleCost = s => (s.items || []).reduce((a, i) => a + num(i.qty) * num(i.cost), 0);
 const saleProfit = s => saleTotal(s) - saleCost(s);
-
-function landedUnit(p, item){ const q = itemsQty(p.items); return num(item.rate) + (q ? (num(p.freight)+num(p.other))/q : 0); }
-function avgCost(pid){
-  let q=0, v=0;
-  S.purchases.forEach(p => (p.items||[]).forEach(i => { if(i.productId===pid){ q+=num(i.qty); v+=num(i.qty)*landedUnit(p,i); } }));
-  return q ? v/q : 0;
+const saleDue = s => saleTotal(s) - num(s.paid);
+const purDue = p => purTotal(p) - num(p.paid);
+const itemsText = items => (items || []).map(i => `${num(i.qty)} × ${pname(i.productId)}`).join(", ");
+function landedUnit(p, item){ const q = itemsQty(p.items); return num(item.rate) + (q ? (num(p.freight) + num(p.other)) / q : 0); }
+function avgCost(pid){ let q = 0, v = 0;
+  S.purchases.forEach(p => (p.items || []).forEach(i => { if(i.productId === pid){ q += num(i.qty); v += num(i.qty) * landedUnit(p, i); } }));
+  return q ? v / q : 0; }
+function stockOf(pid){ let q = 0;
+  S.purchases.forEach(p => (p.items || []).forEach(i => { if(i.productId === pid) q += num(i.qty); }));
+  S.sales.forEach(s => (s.items || []).forEach(i => { if(i.productId === pid) q -= num(i.qty); }));
+  S.adjustments.forEach(a => { if(a.productId === pid) q += num(a.qty); });
+  return q; }
+function lastRate(pid, kind){ for(const x of [...S[kind]].sort(byDateDesc)){ const it = (x.items || []).find(i => i.productId === pid); if(it) return num(it.rate); } return 0; }
+function custBalance(cid){ let b = 0;
+  S.sales.forEach(s => { if(s.customerId === cid) b += saleDue(s); });
+  S.payments.forEach(p => { if(p.kind === "customer" && p.partyId === cid) b -= num(p.amount); });
+  return b; }
+function supBalance(sid){ let b = 0;
+  S.purchases.forEach(p => { if(p.supplierId === sid) b += purDue(p); });
+  S.payments.forEach(p => { if(p.kind === "supplier" && p.partyId === sid) b -= num(p.amount); });
+  return b; }
+function lastActivity(kind, id){
+  const dates = kind === "c" ? [...S.sales.filter(s => s.customerId === id), ...S.payments.filter(p => p.kind === "customer" && p.partyId === id)].map(x => x.date)
+                             : [...S.purchases.filter(p => p.supplierId === id), ...S.payments.filter(p => p.kind === "supplier" && p.partyId === id)].map(x => x.date);
+  return dates.sort().pop() || ""; }
+function periodRange(key){
+  const t = today(), m = monthOf(t);
+  if(key === "today") return [t, t];
+  if(key === "7d") return [addDays(t, -6), t];
+  if(key === "month") return [m + "-01", t];
+  if(key === "last"){ const pm = prevMonth(m); return [pm + "-01", pm + "-31"]; }
+  return ["0000-01-01", "9999-12-31"];
 }
-function stockOf(pid){
-  let q=0;
-  S.purchases.forEach(p => (p.items||[]).forEach(i => { if(i.productId===pid) q+=num(i.qty); }));
-  S.sales.forEach(s => (s.items||[]).forEach(i => { if(i.productId===pid) q-=num(i.qty); }));
-  S.adjustments.forEach(a => { if(a.productId===pid) q+=num(a.qty); });
-  return q;
-}
-function lastRate(pid, kind){
-  const list = [...S[kind]].sort(byDateDesc);
-  for(const x of list){ const it = (x.items||[]).find(i=>i.productId===pid); if(it) return num(it.rate); }
-  return 0;
-}
-function custBalance(cid){
-  let b=0;
-  S.sales.forEach(s => { if(s.customerId===cid) b += saleTotal(s) - num(s.paid); });
-  S.payments.forEach(p => { if(p.kind==="customer" && p.partyId===cid) b -= num(p.amount); });
-  return b;
-}
-function supBalance(sid){
-  let b=0;
-  S.purchases.forEach(p => { if(p.supplierId===sid) b += purTotal(p) - num(p.paid); });
-  S.payments.forEach(p => { if(p.kind==="supplier" && p.partyId===sid) b -= num(p.amount); });
-  return b;
-}
+const inRange = (d, [a, b]) => d >= a && d <= b;
 function monthFigures(m){
-  const sales = S.sales.filter(s=>monthOf(s.date)===m);
-  const exp = S.expenses.filter(e=>monthOf(e.date)===m);
-  const revenue = sales.reduce((a,s)=>a+saleTotal(s),0);
-  const cost = sales.reduce((a,s)=>a+saleCost(s),0);
-  const expenses = exp.reduce((a,e)=>a+num(e.amount),0);
-  const bought = S.purchases.filter(p=>monthOf(p.date)===m).reduce((a,p)=>a+purTotal(p),0);
-  return {sales, exp, revenue, cost, gross:revenue-cost, expenses, net:revenue-cost-expenses, bought};
+  const sales = S.sales.filter(s => monthOf(s.date) === m), exp = S.expenses.filter(e => monthOf(e.date) === m);
+  const revenue = sales.reduce((a, s) => a + saleTotal(s), 0), cost = sales.reduce((a, s) => a + saleCost(s), 0);
+  const expenses = exp.reduce((a, e) => a + num(e.amount), 0);
+  const bought = S.purchases.filter(p => monthOf(p.date) === m).reduce((a, p) => a + purTotal(p), 0);
+  const bags = sales.reduce((a, s) => a + itemsQty(s.items), 0);
+  return {sales, exp, revenue, cost, gross: revenue - cost, expenses, net: revenue - cost - expenses, bought, bags};
 }
+function delta(cur, prev){ if(!prev) return ""; const d = (cur - prev) / Math.abs(prev) * 100; return `<b class="${d >= 0 ? "up" : "down"}">${d >= 0 ? "▲" : "▼"} ${Math.abs(d).toFixed(0)}%</b> vs last month`; }
+
+/* ---------- Rendering ---------- */
+let renderQueued = false;
+function scheduleRender(){ if(renderQueued) return; renderQueued = true; requestAnimationFrame(() => { renderQueued = false; render(); }); }
+const NAV = [
+  ["Overview", [["dashboard","Dashboard"],["activity","Activity", () => isManager()]]],
+  ["Operations", [["sales","Sales"],["purchases","Purchases"],["stock","Stock"],["khata","Khata"]]],
+  ["Finance", [["expenses","Expenses"],["reports","Reports", () => seesProfit()]]],
+  ["Setup", [["products","Products"],["suppliers","Suppliers"],["team","Team"],["backup","Backup & export"]]]
+];
+const TITLES = {dashboard:"Dashboard", activity:"Activity", sales:"Sales", purchases:"Purchases", stock:"Stock", khata:"Khata", expenses:"Expenses", reports:"Reports", products:"Products", suppliers:"Suppliers", team:"Team", backup:"Backup & export", more:"More"};
+const SECTION = v => (NAV.find(([, items]) => items.some(([k]) => k === v)) || ["Overview"])[0];
+function go(v){ APP.view = v; APP.f.q = ""; render(); window.scrollTo(0, 0); }
+
+function render(){
+  if(!APP.shop) return;
+  const ae = document.activeElement, focusId = ae && ae.id && ae.closest && ae.closest("#root") ? ae.id : null;
+  const selStart = focusId && ae.selectionStart;
+  const lowCount = S.products.filter(p => p.active !== false && stockOf(p.id) <= num(p.lowStock)).length;
+  const nav = NAV.map(([g, items]) => `<div class="navgroup"><h6>${g}</h6>${items.filter(([, , show]) => !show || show()).map(([k, l]) =>
+      `<button class="nav" data-nav="${k}" ${APP.view === k ? 'aria-current="page"' : ""}>${icon(k)}<span>${l}</span>${k === "stock" && lowCount ? `<span class="count">${lowCount}</span>` : ""}</button>`).join("")}</div>`).join("");
+  const mcur = ["dashboard","sales","purchases","stock"].includes(APP.view) ? APP.view : "more";
+  const mt = [["dashboard","Home"],["sales","Sales"],["purchases","Purchases"],["stock","Stock"],["more","More"]].map(([k, l]) =>
+    `<button data-nav="${k}" ${mcur === k ? 'aria-current="page"' : ""}>${icon(k)}${l}</button>`).join("");
+  $("#root").innerHTML = `
+  <div class="shell">
+    <aside class="side">
+      <div class="org"><div class="logo">M</div><div><b>${esc(APP.shop.name)}</b><span>Fertilizer &amp; seed</span></div></div>
+      ${nav}
+      <div class="side-foot"><button class="me" data-act="accountMenu"><span class="avatar">${esc(initials(APP.member.display_name))}</span><span><b style="font-weight:600">${esc(APP.member.display_name)}</b><small>${esc(cap(role()))}</small></span></button></div>
+    </aside>
+    <div>
+      <header class="top"><div class="top-in">
+        <div class="grow"><div class="crumb">${esc(SECTION(APP.view))}</div><h1>${TITLES[APP.view] || ""}</h1></div>
+        <span id="syncpill"></span>
+        <button class="btn" data-act="newMenu">${icon("plus")}<span>New</span></button>
+      </div></header>
+      <main class="page" id="page">${(V[APP.view] || V.dashboard)()}</main>
+    </div>
+  </div>
+  <nav class="mtabs">${mt}</nav>`;
+  drawSync();
+  if(focusId){ const el = document.getElementById(focusId); if(el){ el.focus(); try{ if(selStart != null) el.setSelectionRange(selStart, selStart); }catch(e){} } }
+}
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+function drawSync(){
+  const el = $("#syncpill"); if(!el) return;
+  const n = pendingCount(); let cls = "", txt;
+  if(!online()){ cls = "offline"; txt = n ? `Offline · ${n} to sync` : "Offline"; }
+  else if(APP.sync.state === "syncing"){ cls = "syncing"; txt = "Syncing…"; }
+  else if(APP.sync.state === "error"){ cls = "error"; txt = "Sync issue"; }
+  else if(n){ cls = "pending"; txt = `${n} to sync`; }
+  else txt = APP.sync.last ? "Synced" : "Connecting…";
+  el.innerHTML = `<button class="sync ${cls}" data-act="syncInfo" title="${esc(APP.sync.error || "")}"><i></i>${txt}</button>`;
+}
+
+/* ---------- Charts ---------- */
+function barChart(values, labels, {h = 150, w = 600, color = "var(--brand)", fmt = inr0, highlightLast = true} = {}){
+  const pad = 22, n = values.length, max = Math.max(1, ...values), bw = (w - pad) / n;
+  const bars = values.map((v, i) => { const bh = Math.max(v > 0 ? 2 : 0, (v / max) * (h - 30)); const x = pad + i * bw + bw * .15, y = h - 18 - bh;
+    return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${(bw * .7).toFixed(1)}" height="${bh.toFixed(1)}" rx="2.5" fill="${color}" opacity="${highlightLast && i === n - 1 ? 1 : .72}"><title>${esc(labels[i])}: ${fmt(v)}</title></rect>`; }).join("");
+  const every = Math.ceil(n / 8);
+  const lbl = labels.map((l, i) => ((i % every === 0 && (n - 1 - i >= every || i === n - 1)) || i === n - 1) ? `<text x="${(pad + i * bw + bw / 2).toFixed(1)}" y="${h - 4}" text-anchor="middle">${esc(l)}</text>` : "").join("");
+  const grid = [0.5, 1].map(f => `<line x1="${pad}" x2="${w}" y1="${(h - 18 - f * (h - 30)).toFixed(1)}" y2="${(h - 18 - f * (h - 30)).toFixed(1)}" stroke="var(--line)" stroke-dasharray="3 4"/><text x="0" y="${(h - 14 - f * (h - 30)).toFixed(1)}">${f === 1 ? shortAmt(max) : shortAmt(max / 2)}</text>`).join("");
+  return `<svg class="chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="Bar chart">${grid}${bars}${lbl}</svg>`;
+}
+const shortAmt = v => v >= 1e7 ? (v / 1e7).toFixed(1) + "Cr" : v >= 1e5 ? (v / 1e5).toFixed(1) + "L" : v >= 1e4 ? (v / 1e3).toFixed(0) + "k" : v >= 1e3 ? (v / 1e3).toFixed(1) + "k" : Math.round(v) + "";
 
 /* ---------- Views ---------- */
-function render(){
-  drawNav();
-  const m = $("#main");
-  const last = getLast();
-  const hasData = S.sales.length+S.purchases.length>0;
-  const banner = dbState==="off" ? `<div class="banner">This browser can't save data. Please open the app in Safari or Chrome (not a private window).</div>`
-    : (hasData && Date.now()-last > 7*864e5 && view!=="backup") ? `<div class="banner">All data is stored only on this device. ${last?"It's been over a week since your last backup.":"You haven't saved a backup yet."} <button class="btn small" data-nav="backup">Back up now</button></div>` : "";
-  m.innerHTML = banner + (V[view] || V.home)();
-}
 const V = {};
+const emptyState = (title, text, btn) => `<div class="empty"><b>${title}</b>${text}${btn ? `<div style="margin-top:14px">${btn}</div>` : ""}</div>`;
+const pillStatus = (due, total) => due > 0.5 ? (due >= total - 0.5 ? `<span class="pill bad">Unpaid</span>` : `<span class="pill warn">Part paid</span>`) : `<span class="pill ok">Paid</span>`;
+const searchBox = ph => `<div class="search">${icon("search")}<input id="q" type="search" placeholder="${ph}" value="${esc(APP.f.q)}" data-f="q" autocomplete="off"></div>`;
+const periodSeg = key => `<div class="seg" role="group" aria-label="Period">${[["today","Today"],["7d","7 days"],["month","This month"],["last","Last month"],["all","All"]].map(([k, l]) =>
+  `<button data-act="setF" data-id="${key}:${k}" aria-pressed="${APP.f[key] === k}">${l}</button>`).join("")}</div>`;
+const matchQ = (...parts) => { const q = APP.f.q.trim().toLowerCase(); return !q || parts.join(" ").toLowerCase().includes(q); };
 
-V.home = () => {
-  const t = today(), mm = monthOf(t);
-  const ts = S.sales.filter(s=>s.date===t);
-  const tRev = ts.reduce((a,s)=>a+saleTotal(s),0), tProfit = ts.reduce((a,s)=>a+saleProfit(s),0);
-  const tBags = ts.reduce((a,s)=>a+itemsQty(s.items),0);
-  const tCash = ts.reduce((a,s)=>a+num(s.paid),0) + S.payments.filter(p=>p.kind==="customer"&&p.date===t).reduce((a,p)=>a+num(p.amount),0);
-  const f = monthFigures(mm);
-  const recv = S.customers.reduce((a,c)=>a+Math.max(0,custBalance(c.id)),0);
-  const pay = S.suppliers.reduce((a,s)=>a+Math.max(0,supBalance(s.id)),0);
-  const stockVal = S.products.reduce((a,p)=>a+Math.max(0,stockOf(p.id))*avgCost(p.id),0);
-  const low = S.products.filter(p=>p.active!==false && stockOf(p.id) <= num(p.lowStock));
+V.dashboard = () => {
+  const t = today(), mm = monthOf(t), f = monthFigures(mm), pf = monthFigures(prevMonth(mm));
+  const ts = S.sales.filter(s => s.date === t);
+  const tRev = ts.reduce((a, s) => a + saleTotal(s), 0), tBags = ts.reduce((a, s) => a + itemsQty(s.items), 0);
+  const tCash = ts.reduce((a, s) => a + num(s.paid), 0) + S.payments.filter(p => p.kind === "customer" && p.date === t).reduce((a, p) => a + num(p.amount), 0);
+  const tProfit = ts.reduce((a, s) => a + saleProfit(s), 0);
+  const recv = S.customers.reduce((a, c) => a + Math.max(0, custBalance(c.id)), 0);
+  const pay = S.suppliers.reduce((a, s) => a + Math.max(0, supBalance(s.id)), 0);
+  const stockVal = S.products.reduce((a, p) => a + Math.max(0, stockOf(p.id)) * avgCost(p.id), 0);
+  const days = [...Array(30)].map((_, i) => addDays(t, i - 29));
+  const series = days.map(d => S.sales.filter(s => s.date === d).reduce((a, s) => a + saleTotal(s), 0));
+  const low = S.products.filter(p => p.active !== false && stockOf(p.id) <= num(p.lowStock)).sort((a, b) => stockOf(a.id) - stockOf(b.id));
+  const owed = S.customers.map(c => ({...c, b: custBalance(c.id)})).filter(c => c.b > 0.5).sort((a, b) => b.b - a.b).slice(0, 5);
   const recent = [
-    ...S.sales.map(s=>({d:s.date,c:s.createdAt,t:`Sold to ${esc(s.customerId?custName(s.customerId):(s.customerName||"walk-in"))}`,m:(s.items||[]).map(i=>`${i.qty} × ${esc(pname(i.productId))}`).join(", "),a:inr0(saleTotal(s)),cls:"pos"})),
-    ...S.purchases.map(p=>({d:p.date,c:p.createdAt,t:`Bought from ${esc(supName(p.supplierId))}`,m:(p.items||[]).map(i=>`${i.qty} × ${esc(pname(i.productId))}`).join(", "),a:inr0(purTotal(p)),cls:""}))
-  ].sort((a,b)=>(b.d||"").localeCompare(a.d||"")||(b.c||0)-(a.c||0)).slice(0,6);
-
-  return `
-  <div class="head"><div><h1>${new Date().toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long"})}</h1><p class="sub">Malhan Trading Company</p></div></div>
-  ${S.products.length ? "" : `<div class="banner">Start by adding your products under More → Products, and your dealerships under More → Suppliers.</div>`}
-  <section class="today">
-    <div><small>Sold today</small><div class="big num">${inr0(tRev)}</div><small style="margin-top:8px">${tBags} bags · ${ts.length} bills</small></div>
-    <div><small>Profit today</small><div class="v num">${inr0(tProfit)}</div></div>
-    <div><small>Cash/UPI received today</small><div class="v num">${inr0(tCash)}</div></div>
-  </section>
-  <div class="quick">
-    <button data-act="newSale">New sale<span>Bill a customer</span></button>
-    <button data-act="newPurchase">New purchase<span>Stock arrived</span></button>
-    <button data-act="newReceipt">Receive payment<span>Udhaar collected</span></button>
-    <button data-act="newExpense">Add expense<span>Rent, labour, freight</span></button>
-  </div>
-  <h2>${fmtMonth(mm)}</h2>
-  <div class="figures">
-    <div><small>Sales</small><b class="num">${inr0(f.revenue)}</b></div>
-    <div><small>Gross profit</small><b class="num">${inr0(f.gross)}</b></div>
-    <div><small>Expenses</small><b class="num">${inr0(f.expenses)}</b></div>
-    <div><small>Net profit</small><b class="num ${f.net<0?'neg':'pos'}">${inr0(f.net)}</b></div>
-    <div><small>To collect (udhaar)</small><b class="num">${inr0(recv)}</b></div>
-    <div><small>To pay suppliers</small><b class="num">${inr0(pay)}</b></div>
-    <div><small>Stock value at cost</small><b class="num">${inr0(stockVal)}</b></div>
-    <div><small>Bought this month</small><b class="num">${inr0(f.bought)}</b></div>
-  </div>
-  ${low.length ? `<h2>Running low</h2><div class="panel">${low.map(p=>`<div class="item click" data-nav="stock"><div class="main"><div class="t">${esc(p.name)}</div><div class="m">Reorder level ${num(p.lowStock)} bags</div></div><div class="amt ${stockOf(p.id)<=0?'neg':''}">${stockOf(p.id)} left</div></div>`).join("")}</div>` : ""}
-  <h2>Recent</h2>
-  <div class="panel">${recent.length ? recent.map(r=>`<div class="item"><div class="main"><div class="t">${r.t}</div><div class="m">${fmtDate(r.d)} · ${r.m}</div></div><div class="amt num">${r.a}</div></div>`).join("") : `<div class="empty">No entries yet.</div>`}</div>`;
+    ...S.sales.map(s => ({k: "sales", x: s, t: `${saleWho(s)}`, m: itemsText(s.items), a: saleTotal(s), d: s.date, pill: pillStatus(saleDue(s), saleTotal(s))})),
+    ...S.purchases.map(p => ({k: "purchases", x: p, t: supName(p.supplierId), m: itemsText(p.items), a: purTotal(p), d: p.date, pill: `<span class="pill info">Purchase</span>`}))
+  ].sort((a, b) => (b.d || "").localeCompare(a.d || "") || String(b.x._at || "").localeCompare(String(a.x._at || ""))).slice(0, 7);
+  const setup = !S.products.length ? `<div class="banner info"><span>Add your products and suppliers to get started.</span><button class="btn sm" data-nav="products">Set up products</button></div>` : "";
+  const kpi = (l, v, d, cls = "") => `<div class="card kpi"><div class="l">${l}</div><div class="v num ${cls}">${v}</div><div class="d">${d || "&nbsp;"}</div></div>`;
+  return `${setup}${backupBanner()}
+  <div class="stack">
+    <section class="card hero">
+      <div class="hero-l"><div class="l">Sales today · ${fmtDate(t)}</div><div class="v num">${inr0(tRev)}</div>
+        <div class="s"><span>${tBags} bags</span><span>${ts.length} bill${ts.length === 1 ? "" : "s"}</span><span>${inr0(tCash)} collected</span>${seesProfit() ? `<span>${inr0(tProfit)} profit</span>` : ""}</div></div>
+      <div class="hero-r"><div class="small muted" style="display:flex;justify-content:space-between"><span>Daily sales, last 30 days</span><span class="num">${inr0(series.reduce((a, b) => a + b, 0))}</span></div>
+        ${barChart(series, days.map(fmtDateShort), {h: 130})}</div>
+    </section>
+    <div class="kpis">
+      ${kpi(`Sales · ${fmtMonth(mm)}`, inr0(f.revenue), delta(f.revenue, pf.revenue))}
+      ${seesProfit() ? kpi("Net profit this month", inr0(f.net), `Gross ${inr0(f.gross)} · expenses ${inr0(f.expenses)}`, f.net < 0 ? "down" : "") : kpi("Bags sold this month", f.bags.toLocaleString("en-IN"), "")}
+      ${kpi("Receivable (udhaar)", inr0(recv), `${S.customers.filter(c => custBalance(c.id) > 0.5).length} customers`)}
+      ${kpi("Payable to suppliers", inr0(pay), seesProfit() ? `Stock at cost ${inr0(stockVal)}` : "")}
+    </div>
+    <div class="cols">
+      <section class="card"><div class="card-h"><h3>Recent transactions</h3><button class="btn ghost sm" data-nav="sales">View all</button></div>
+        ${recent.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>Date</th><th>Party</th><th>Items</th><th>Status</th><th class="n">Amount</th></tr></thead><tbody>
+        ${recent.map(r => `<tr class="click" data-act="${r.k === "sales" ? "openBill" : "openPurchase"}" data-id="${r.x.id}"><td class="hide-m">${fmtDateShort(r.d)}</td><td class="lead"><div class="primary">${esc(r.t)}</div><div class="sub only-m">${esc(r.m)}</div></td><td class="hide-m"><div class="sub">${esc(r.m)}</div></td><td data-l="${fmtDateShort(r.d)}">${r.pill}</td><td class="n" data-l="Amount">${inr0(r.a)}</td></tr>`).join("")}
+        </tbody></table></div>` : emptyState("No transactions yet", "Sales and purchases will appear here.", `<button class="btn" data-act="newSale">Record a sale</button>`)}
+      </section>
+      <div class="stack">
+        <section class="card"><div class="card-h"><h3>Stock alerts</h3><span class="note">${low.length} item${low.length === 1 ? "" : "s"}</span></div>
+          ${low.length ? `<div class="list">${low.slice(0, 6).map(p => { const q = stockOf(p.id); return `<div class="row click" data-nav="stock"><div class="grow"><div class="primary" style="font-weight:600">${esc(p.name)}</div><div class="small muted">Reorder at ${num(p.lowStock)} bags</div></div>${q <= 0 ? `<span class="pill bad">Out of stock</span>` : `<span class="pill warn">${q} left</span>`}</div>`; }).join("")}</div>` : `<div class="empty" style="padding:24px">All products are above their reorder level.</div>`}
+        </section>
+        <section class="card"><div class="card-h"><h3>Top dues</h3><button class="btn ghost sm" data-nav="khata">Khata</button></div>
+          ${owed.length ? `<div class="list">${owed.map(c => `<div class="row click" data-act="ledger" data-id="c:${c.id}"><span class="avatar">${esc(initials(c.name))}</span><div class="grow"><div style="font-weight:600">${esc(c.name)}</div><div class="small muted">${esc(c.village || c.phone || "")}</div></div><b class="num" style="color:var(--bad)">${inr0(c.b)}</b></div>`).join("")}</div>` : `<div class="empty" style="padding:24px">No pending dues.</div>`}
+        </section>
+      </div>
+    </div>
+  </div>`;
 };
 
 V.sales = () => {
-  const list = [...S.sales].sort(byDateDesc);
-  return `<div class="head"><div><h1>Sales</h1><p class="sub">${list.length} bills recorded</p></div><button class="btn" data-act="newSale">New sale</button></div>
-  <div class="panel">${list.length ? list.map(s=>{
-    const due = saleTotal(s)-num(s.paid);
-    const who = s.customerId ? custName(s.customerId) : (s.customerName || "Walk-in customer");
-    return `<div class="item"><div class="main"><div class="t">${esc(who)} ${due>0.5?`<span class="tag warn">₹${Math.round(due).toLocaleString("en-IN")} on credit</span>`:""}</div>
-    <div class="m">${fmtDate(s.date)} · ${(s.items||[]).map(i=>`${i.qty} × ${esc(pname(i.productId))} @ ${inr(i.rate)}`).join(", ")}${s.note?` · ${esc(s.note)}`:""}</div></div>
-    <div class="amt num">${inr0(saleTotal(s))}<small class="${saleProfit(s)<0?'neg':''}">profit ${inr0(saleProfit(s))}</small></div>
-    <button class="x" title="Delete" aria-label="Delete sale" data-act="del" data-id="sales/${s.id}">×</button></div>`;}).join("") : `<div class="empty">No sales yet. Tap “New sale” to bill your first customer.</div>`}</div>`;
+  const rng = periodRange(APP.f.period);
+  const list = S.sales.filter(s => inRange(s.date, rng))
+    .filter(s => APP.f.status === "all" || (APP.f.status === "credit" ? saleDue(s) > 0.5 : saleDue(s) <= 0.5))
+    .filter(s => matchQ(saleWho(s), itemsText(s.items), billNo(s), s.note || "", cust(s.customerId)?.village || ""))
+    .sort(byDateDesc);
+  const tot = list.reduce((a, s) => a + saleTotal(s), 0), due = list.reduce((a, s) => a + Math.max(0, saleDue(s)), 0), bags = list.reduce((a, s) => a + itemsQty(s.items), 0);
+  const prof = list.reduce((a, s) => a + saleProfit(s), 0);
+  return `<div class="toolbar">${searchBox("Search customer, product, bill no.")}${periodSeg("period")}
+    <select data-f="status" id="fstatus" aria-label="Payment status"><option value="all" ${APP.f.status === "all" ? "selected" : ""}>All bills</option><option value="credit" ${APP.f.status === "credit" ? "selected" : ""}>With balance due</option><option value="paid" ${APP.f.status === "paid" ? "selected" : ""}>Fully paid</option></select>
+    <span class="grow" style="flex:1"></span><button class="btn" data-act="newSale">${icon("plus")}New sale</button></div>
+  <section class="card">
+    <div class="summary"><div>Bills<b class="num">${list.length}</b></div><div>Bags<b class="num">${bags.toLocaleString("en-IN")}</b></div><div>Sales<b class="num">${inr0(tot)}</b></div><div>Credit given<b class="num">${inr0(due)}</b></div>${seesProfit() ? `<div>Profit<b class="num">${inr0(prof)}</b></div>` : ""}</div>
+    ${list.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>Date</th><th>Bill</th><th>Customer</th><th>Items</th><th>Status</th><th class="n">Amount</th>${seesProfit() ? `<th class="n">Profit</th>` : ""}<th>Entered by</th></tr></thead><tbody>
+    ${list.map(s => `<tr class="click" data-act="openBill" data-id="${s.id}">
+      <td data-l="Date">${fmtDate(s.date)}</td><td data-l="Bill" class="num">${billNo(s)}${s._dirty ? ` <span class="pill">Not synced</span>` : ""}</td>
+      <td class="lead"><div class="primary">${esc(saleWho(s))}</div><div class="sub">${esc(cust(s.customerId)?.village || s.mode || "")}</div></td>
+      <td data-l="Items"><div class="sub">${esc(itemsText(s.items))}</div></td>
+      <td data-l="Status">${pillStatus(saleDue(s), saleTotal(s))}</td>
+      <td class="n" data-l="Amount"><span class="cell">${inr0(saleTotal(s))}${saleDue(s) > 0.5 ? `<span class="sub" style="display:block;color:var(--bad)">${inr0(saleDue(s))} due</span>` : ""}</span></td>
+      ${seesProfit() ? `<td class="n" data-l="Profit"><span class="${saleProfit(s) < 0 ? "down" : ""}">${inr0(saleProfit(s))}</span></td>` : ""}
+      <td data-l="Entered by" class="small muted">${esc(memberName(s._by))}</td></tr>`).join("")}
+    </tbody></table></div>` : emptyState(S.sales.length ? "No matching bills" : "No sales yet", S.sales.length ? "Try a different period or search." : "Record your first sale to see it here.", S.sales.length ? "" : `<button class="btn" data-act="newSale">New sale</button>`)}
+  </section>`;
 };
 
 V.purchases = () => {
-  const list = [...S.purchases].sort(byDateDesc);
-  return `<div class="head"><div><h1>Purchases</h1><p class="sub">Stock bought from dealerships and the market</p></div><button class="btn" data-act="newPurchase">New purchase</button></div>
-  <div class="panel">${list.length ? list.map(p=>{
-    const due = purTotal(p)-num(p.paid);
-    const extra = num(p.freight)+num(p.other);
-    return `<div class="item"><div class="main"><div class="t">${esc(supName(p.supplierId))}${p.invoiceNo?` <span class="tag">Inv ${esc(p.invoiceNo)}</span>`:""} ${due>0.5?`<span class="tag warn">₹${Math.round(due).toLocaleString("en-IN")} unpaid</span>`:""}</div>
-    <div class="m">${fmtDate(p.date)} · ${(p.items||[]).map(i=>`${i.qty} × ${esc(pname(i.productId))} @ ${inr(i.rate)}`).join(", ")}${extra?` · freight/other ${inr0(extra)}`:""}</div></div>
-    <div class="amt num">${inr0(purTotal(p))}<small>${itemsQty(p.items)} bags</small></div>
-    <button class="x" title="Delete" aria-label="Delete purchase" data-act="del" data-id="purchases/${p.id}">×</button></div>`;}).join("") : `<div class="empty">No purchases yet. Record the stock you receive from NFL or the market.</div>`}</div>`;
+  const rng = periodRange(APP.f.period);
+  const list = S.purchases.filter(p => inRange(p.date, rng))
+    .filter(p => APP.f.status === "all" || (APP.f.status === "credit" ? purDue(p) > 0.5 : purDue(p) <= 0.5))
+    .filter(p => matchQ(supName(p.supplierId), itemsText(p.items), p.invoiceNo || "", p.note || "")).sort(byDateDesc);
+  const tot = list.reduce((a, p) => a + purTotal(p), 0), due = list.reduce((a, p) => a + Math.max(0, purDue(p)), 0), bags = list.reduce((a, p) => a + itemsQty(p.items), 0);
+  return `<div class="toolbar">${searchBox("Search supplier, product, invoice")}${periodSeg("period")}
+    <select data-f="status" id="fstatus" aria-label="Payment status"><option value="all" ${APP.f.status === "all" ? "selected" : ""}>All purchases</option><option value="credit" ${APP.f.status === "credit" ? "selected" : ""}>Unpaid balance</option><option value="paid" ${APP.f.status === "paid" ? "selected" : ""}>Fully paid</option></select>
+    <span style="flex:1"></span><button class="btn" data-act="newPurchase">${icon("plus")}New purchase</button></div>
+  <section class="card">
+    <div class="summary"><div>Purchases<b class="num">${list.length}</b></div><div>Bags received<b class="num">${bags.toLocaleString("en-IN")}</b></div><div>Value<b class="num">${inr0(tot)}</b></div><div>Unpaid<b class="num">${inr0(due)}</b></div></div>
+    ${list.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>Date</th><th>Supplier</th><th>Invoice</th><th>Items</th><th class="n">Bags</th><th>Status</th><th class="n">Amount</th><th>Entered by</th></tr></thead><tbody>
+    ${list.map(p => `<tr class="click" data-act="openPurchase" data-id="${p.id}"><td data-l="Date">${fmtDate(p.date)}</td>
+      <td class="lead"><div class="primary">${esc(supName(p.supplierId))}</div></td><td data-l="Invoice">${esc(p.invoiceNo || "—")}${p._dirty ? ` <span class="pill">Not synced</span>` : ""}</td>
+      <td data-l="Items"><div class="sub">${esc(itemsText(p.items))}</div></td><td class="n" data-l="Bags">${itemsQty(p.items)}</td>
+      <td data-l="Status">${pillStatus(purDue(p), purTotal(p))}</td><td class="n" data-l="Amount">${inr0(purTotal(p))}</td>
+      <td data-l="Entered by" class="small muted">${esc(memberName(p._by))}</td></tr>`).join("")}
+    </tbody></table></div>` : emptyState(S.purchases.length ? "No matching purchases" : "No purchases yet", S.purchases.length ? "Try a different period or search." : "Record stock received from NFL or the market.", S.purchases.length ? "" : `<button class="btn" data-act="newPurchase">New purchase</button>`)}
+  </section>`;
 };
 
 V.stock = () => {
-  const prods = S.products.filter(p=>p.active!==false).sort((a,b)=>(a.category||"").localeCompare(b.category||"")||a.name.localeCompare(b.name));
-  const maxQ = Math.max(1,...prods.map(p=>stockOf(p.id)));
-  const totalVal = prods.reduce((a,p)=>a+Math.max(0,stockOf(p.id))*avgCost(p.id),0);
-  const adj = [...S.adjustments].sort(byDateDesc).slice(0,10);
-  return `<div class="head"><div><h1>Stock</h1><p class="sub">Worth ${inr0(totalVal)} at average landed cost</p></div><button class="btn ghost" data-act="newAdjust">Adjust stock</button></div>
-  <div class="panel">
-    <div class="stock headrow"><span>Product</span><span>In stock</span><span class="hide-sm">Avg cost / bag</span><span class="hide-sm">Stock value</span><span></span></div>
-    ${prods.length ? prods.map(p=>{ const q=stockOf(p.id), low=q<=num(p.lowStock), c=avgCost(p.id);
-      return `<div class="stock"><div><div class="t" style="font-weight:700">${esc(p.name)}</div><div class="m" style="color:var(--muted);font-size:13px">${esc(p.category||"")}${p.bagKg?` · ${num(p.bagKg)} kg bag`:""}${p.mrp?` · MRP ${inr(p.mrp)}`:""}</div></div>
-      <div><span class="bag num ${q<0?'neg':''}">${q}</span><div class="meter"><i class="${low?'low':''}" style="width:${Math.max(0,Math.min(100,q/maxQ*100))}%"></i></div></div>
-      <div class="hide-sm num">${c?inr(c):"—"}</div><div class="hide-sm num">${inr0(Math.max(0,q)*c)}</div>
-      <div>${q<=0?'<span class="tag bad">Out</span>':low?'<span class="tag warn">Low</span>':''}</div></div>`;}).join("") : `<div class="empty">No products yet. Add them under More → Products.</div>`}
-  </div>
-  ${adj.length?`<h2>Recent adjustments</h2><div class="panel">${adj.map(a=>`<div class="item"><div class="main"><div class="t">${esc(pname(a.productId))}</div><div class="m">${fmtDate(a.date)} · ${esc(a.reason||"")}</div></div><div class="amt num ${num(a.qty)<0?'neg':'pos'}">${num(a.qty)>0?"+":""}${num(a.qty)} bags</div><button class="x" aria-label="Delete adjustment" data-act="del" data-id="adjustments/${a.id}">×</button></div>`).join("")}</div>`:""}`;
+  const prods = S.products.filter(p => p.active !== false).filter(p => matchQ(p.name, p.category || ""))
+    .sort((a, b) => (a.category || "").localeCompare(b.category || "") || a.name.localeCompare(b.name));
+  const all = S.products.filter(p => p.active !== false);
+  const value = all.reduce((a, p) => a + Math.max(0, stockOf(p.id)) * avgCost(p.id), 0), bags = all.reduce((a, p) => a + Math.max(0, stockOf(p.id)), 0);
+  const low = all.filter(p => stockOf(p.id) <= num(p.lowStock) && stockOf(p.id) > 0).length, out = all.filter(p => stockOf(p.id) <= 0).length;
+  const adj = [...S.adjustments].sort(byDateDesc).slice(0, 8);
+  return `<div class="toolbar">${searchBox("Search products")}<span style="flex:1"></span><button class="btn sec" data-act="newAdjust">${icon("adjust")}Adjust stock</button><button class="btn" data-act="newPurchase">${icon("plus")}Receive stock</button></div>
+  <section class="card">
+    <div class="summary"><div>Bags in godown<b class="num">${bags.toLocaleString("en-IN")}</b></div><div>Value at landed cost<b class="num">${inr0(value)}</b></div><div>Low<b class="num">${low}</b></div><div>Out of stock<b class="num">${out}</b></div></div>
+    ${prods.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>Product</th><th>Category</th><th class="n">In stock</th><th class="n">Reorder at</th><th class="n">Avg landed cost</th><th class="n">Stock value</th><th class="n">MRP</th><th>Status</th></tr></thead><tbody>
+    ${prods.map(p => { const q = stockOf(p.id), c = avgCost(p.id), lv = num(p.lowStock), mx = Math.max(lv * 3, q, 1);
+      return `<tr><td class="lead"><div class="primary">${esc(p.name)}</div><div class="sub">${p.bagKg ? num(p.bagKg) + " kg bag" : ""}</div></td>
+      <td data-l="Category">${esc(p.category || "")}</td>
+      <td class="n" data-l="In stock"><span class="cell"><b class="num" style="font-size:15px">${q}</b><span class="meter" style="display:block;margin-left:auto"><i class="${q <= 0 ? "out" : q <= lv ? "low" : ""}" style="width:${Math.max(0, Math.min(100, q / mx * 100))}%"></i></span></span></td>
+      <td class="n" data-l="Reorder at">${lv}</td><td class="n" data-l="Avg cost">${c ? inr(c) : "—"}</td><td class="n" data-l="Value">${inr0(Math.max(0, q) * c)}</td>
+      <td class="n" data-l="MRP">${p.mrp ? inr(p.mrp) : "—"}</td>
+      <td data-l="Status">${q <= 0 ? `<span class="pill bad">Out</span>` : q <= lv ? `<span class="pill warn">Low</span>` : `<span class="pill ok">OK</span>`}</td></tr>`; }).join("")}
+    </tbody></table></div>` : emptyState("No products", "Add products under Setup → Products.", isManager() ? `<button class="btn" data-nav="products">Add products</button>` : "")}
+  </section>
+  ${adj.length ? `<section class="card" style="margin-top:16px"><div class="card-h"><h3>Recent adjustments</h3></div><div class="tw"><table class="t stackable"><thead><tr><th>Date</th><th>Product</th><th>Reason</th><th class="n">Bags</th><th>By</th><th></th></tr></thead><tbody>
+    ${adj.map(a => `<tr><td data-l="Date">${fmtDate(a.date)}</td><td class="lead"><span class="primary">${esc(pname(a.productId))}</span></td><td data-l="Reason">${esc(a.reason || "")}</td><td class="n" data-l="Bags"><span class="${num(a.qty) < 0 ? "down" : "up"}">${num(a.qty) > 0 ? "+" : ""}${num(a.qty)}</span></td><td data-l="By" class="small muted">${esc(memberName(a._by))}</td><td class="n">${canChange(a) ? `<button class="icon-btn" aria-label="Delete adjustment" data-act="delRec" data-id="${a.id}">${icon("trash")}</button>` : ""}</td></tr>`).join("")}
+  </tbody></table></div></section>` : ""}`;
 };
 
 V.khata = () => {
-  const isC = khataTab==="customers";
-  const seg = `<div class="seg" role="group"><button data-act="khataTab" data-id="customers" aria-pressed="${isC}">Customers (udhaar)</button><button data-act="khataTab" data-id="suppliers" aria-pressed="${!isC}">Suppliers</button></div>`;
+  const isC = APP.f.khata === "customers";
+  const seg = `<div class="seg" role="group"><button data-act="setF" data-id="khata:customers" aria-pressed="${isC}">Customers</button><button data-act="setF" data-id="khata:suppliers" aria-pressed="${!isC}">Suppliers</button></div>`;
   if(isC){
-    const list = S.customers.map(c=>({...c,b:custBalance(c.id)})).sort((a,b)=>b.b-a.b);
-    const total = list.reduce((a,c)=>a+Math.max(0,c.b),0);
-    return `<div class="head"><div><h1>Khata</h1><p class="sub">${inr0(total)} to collect from customers</p></div><div class="row"><button class="btn ghost" data-act="newCustomer">Add customer</button><button class="btn" data-act="newReceipt">Receive payment</button></div></div>${seg}<div style="height:14px"></div>
-    <div class="panel">${list.length?list.map(c=>`<div class="item click" data-act="ledger" data-id="c:${c.id}"><div class="main"><div class="t">${esc(c.name)}</div><div class="m">${esc([c.village,c.phone].filter(Boolean).join(" · "))||"&nbsp;"}</div></div><div class="amt num ${c.b>0.5?'neg':''}">${c.b>0.5?inr0(c.b):c.b<-0.5?`${inr0(-c.b)} advance`:"Settled"}<small>${c.b>0.5?"owes you":""}</small></div></div>`).join(""):`<div class="empty">No customers yet. Customers get added here when you sell on credit.</div>`}</div>`;
+    const list = S.customers.map(c => ({...c, b: custBalance(c.id), last: lastActivity("c", c.id)})).filter(c => matchQ(c.name, c.village || "", c.phone || "")).sort((a, b) => b.b - a.b || a.name.localeCompare(b.name));
+    const total = S.customers.reduce((a, c) => a + Math.max(0, custBalance(c.id)), 0), n = S.customers.filter(c => custBalance(c.id) > 0.5).length;
+    return `<div class="toolbar">${seg}${searchBox("Search name, village, phone")}<span style="flex:1"></span><button class="btn sec" data-act="editCustomer">${icon("plus")}Customer</button><button class="btn" data-act="newReceipt">${icon("rupee")}Receive payment</button></div>
+    <section class="card"><div class="summary"><div>To collect<b class="num" style="color:var(--bad)">${inr0(total)}</b></div><div>Customers with dues<b class="num">${n}</b></div><div>Total customers<b class="num">${S.customers.length}</b></div></div>
+    ${list.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>Customer</th><th>Village</th><th>Phone</th><th>Last activity</th><th class="n">Balance</th></tr></thead><tbody>
+    ${list.map(c => `<tr class="click" data-act="ledger" data-id="c:${c.id}"><td class="lead"><div class="primary">${esc(c.name)}</div></td><td data-l="Village">${esc(c.village || "—")}</td><td data-l="Phone">${esc(c.phone || "—")}</td><td data-l="Last activity">${c.last ? fmtDate(c.last) : "—"}</td>
+      <td class="n" data-l="Balance">${c.b > 0.5 ? `<b style="color:var(--bad)">${inr0(c.b)}</b>` : c.b < -0.5 ? `<span class="pill info">${inr0(-c.b)} advance</span>` : `<span class="pill ok">Settled</span>`}</td></tr>`).join("")}
+    </tbody></table></div>` : emptyState("No customers", "Customers are added when you make a credit sale, or here.", "")}</section>`;
   }
-  const list = S.suppliers.map(s=>({...s,b:supBalance(s.id)})).sort((a,b)=>b.b-a.b);
-  const total = list.reduce((a,s)=>a+Math.max(0,s.b),0);
-  return `<div class="head"><div><h1>Khata</h1><p class="sub">${inr0(total)} to pay suppliers</p></div><button class="btn" data-act="newSupPay">Pay supplier</button></div>${seg}<div style="height:14px"></div>
-  <div class="panel">${list.length?list.map(s=>`<div class="item click" data-act="ledger" data-id="s:${s.id}"><div class="main"><div class="t">${esc(s.name)}</div><div class="m">${esc(s.type||"")}${s.phone?` · ${esc(s.phone)}`:""}</div></div><div class="amt num ${s.b>0.5?'neg':''}">${s.b>0.5?inr0(s.b):s.b<-0.5?`${inr0(-s.b)} advance`:"Settled"}<small>${s.b>0.5?"you owe":""}</small></div></div>`).join(""):`<div class="empty">No suppliers yet.</div>`}</div>`;
+  const list = S.suppliers.map(s => ({...s, b: supBalance(s.id), last: lastActivity("s", s.id)})).filter(s => matchQ(s.name, s.phone || "")).sort((a, b) => b.b - a.b);
+  const total = S.suppliers.reduce((a, s) => a + Math.max(0, supBalance(s.id)), 0);
+  return `<div class="toolbar">${seg}${searchBox("Search suppliers")}<span style="flex:1"></span><button class="btn" data-act="newSupPay">${icon("rupee")}Pay supplier</button></div>
+  <section class="card"><div class="summary"><div>To pay<b class="num">${inr0(total)}</b></div><div>Suppliers<b class="num">${S.suppliers.length}</b></div></div>
+  ${list.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>Supplier</th><th>Type</th><th>Last activity</th><th class="n">Balance</th></tr></thead><tbody>
+  ${list.map(s => `<tr class="click" data-act="ledger" data-id="s:${s.id}"><td class="lead"><div class="primary">${esc(s.name)}</div><div class="sub">${esc(s.phone || "")}</div></td><td data-l="Type">${esc(s.type || "")}</td><td data-l="Last activity">${s.last ? fmtDate(s.last) : "—"}</td>
+    <td class="n" data-l="Balance">${s.b > 0.5 ? `<b>${inr0(s.b)}</b>` : s.b < -0.5 ? `<span class="pill info">${inr0(-s.b)} advance</span>` : `<span class="pill ok">Settled</span>`}</td></tr>`).join("")}
+  </tbody></table></div>` : emptyState("No suppliers", "Add suppliers under Setup → Suppliers.", "")}</section>`;
 };
 
-V.more = () => `<h1>More</h1><p class="sub">Setup, expenses and reports</p>
-  <div class="panel">
-  ${[["reports","Reports","Monthly profit, product-wise sales"],["expenses","Expenses","Rent, labour, electricity, transport"],["products","Products","Urea, DAP, SSP, seeds… with MRP and bag size"],["suppliers","Suppliers","NFL and other dealerships, market sellers"],["backup","Backup & restore","Save a copy of all data, restore on a new phone"]].map(([k,t,m])=>`<div class="item click" data-nav="${k}"><div class="main"><div class="t">${t}</div><div class="m">${m}</div></div><div class="amt" aria-hidden="true">›</div></div>`).join("")}
-  </div>`;
-
 V.expenses = () => {
-  const list = [...S.expenses].sort(byDateDesc);
-  const mm = monthOf(today()); const tot = list.filter(e=>monthOf(e.date)===mm).reduce((a,e)=>a+num(e.amount),0);
-  return `<div class="head"><div><h1>Expenses</h1><p class="sub">${inr0(tot)} spent in ${fmtMonth(mm)}</p></div><button class="btn" data-act="newExpense">Add expense</button></div>
-  <div class="panel">${list.length?list.map(e=>`<div class="item"><div class="main"><div class="t">${esc(e.category)}</div><div class="m">${fmtDate(e.date)}${e.note?` · ${esc(e.note)}`:""}</div></div><div class="amt num">${inr0(e.amount)}</div><button class="x" aria-label="Delete expense" data-act="del" data-id="expenses/${e.id}">×</button></div>`).join(""):`<div class="empty">No expenses recorded.</div>`}</div>`;
+  const rng = periodRange(APP.f.expPeriod);
+  const list = S.expenses.filter(e => inRange(e.date, rng)).filter(e => matchQ(e.category, e.note || "")).sort(byDateDesc);
+  const tot = list.reduce((a, e) => a + num(e.amount), 0);
+  const cats = {}; list.forEach(e => cats[e.category] = (cats[e.category] || 0) + num(e.amount));
+  return `<div class="toolbar">${searchBox("Search expenses")}${periodSeg("expPeriod")}<span style="flex:1"></span><button class="btn" data-act="newExpense">${icon("plus")}Add expense</button></div>
+  <div class="cols">
+    <section class="card"><div class="summary"><div>Total<b class="num">${inr0(tot)}</b></div><div>Entries<b class="num">${list.length}</b></div></div>
+    ${list.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>Date</th><th>Type</th><th>Note</th><th class="n">Amount</th><th>By</th><th></th></tr></thead><tbody>
+    ${list.map(e => `<tr><td data-l="Date">${fmtDate(e.date)}</td><td class="lead"><span class="primary">${esc(e.category)}</span></td><td data-l="Note">${esc(e.note || "—")}</td><td class="n" data-l="Amount">${inr0(e.amount)}</td><td data-l="By" class="small muted">${esc(memberName(e._by))}</td><td class="n">${canChange(e) ? `<button class="icon-btn" aria-label="Delete expense" data-act="delRec" data-id="${e.id}">${icon("trash")}</button>` : ""}</td></tr>`).join("")}
+    </tbody></table></div>` : emptyState("No expenses in this period", "Record labour, freight, rent and other costs.", "")}</section>
+    <section class="card"><div class="card-h"><h3>By type</h3></div>${Object.keys(cats).length ? `<div class="list">${Object.entries(cats).sort((a, b) => b[1] - a[1]).map(([k, v]) =>
+      `<div class="row"><div class="grow"><div style="font-weight:600">${esc(k)}</div><div class="meter" style="width:100%"><i style="width:${(v / tot * 100).toFixed(1)}%"></i></div></div><b class="num">${inr0(v)}</b></div>`).join("")}</div>` : `<div class="empty" style="padding:24px">Nothing yet.</div>`}</section>
+  </div>`;
 };
 
 V.reports = () => {
-  const months = [...new Set([monthOf(today()),...S.sales.map(s=>monthOf(s.date)),...S.expenses.map(e=>monthOf(e.date)),...S.purchases.map(p=>monthOf(p.date))])].filter(Boolean).sort().reverse();
-  const f = monthFigures(reportMonth);
+  if(!seesProfit()) return emptyState("Reports are for owners and managers", "Ask the owner if you need access.", "");
+  const months = [...new Set([monthOf(today()), ...S.sales.map(s => monthOf(s.date)), ...S.expenses.map(e => monthOf(e.date)), ...S.purchases.map(p => monthOf(p.date))])].filter(Boolean).sort().reverse();
+  const m = APP.f.reportMonth, f = monthFigures(m), pf = monthFigures(prevMonth(m));
   const rows = {};
-  f.sales.forEach(s=>{ const sub=saleSub(s)||1; (s.items||[]).forEach(i=>{ const r=rows[i.productId]||(rows[i.productId]={q:0,rev:0,cost:0}); const line=num(i.qty)*num(i.rate); r.q+=num(i.qty); r.rev+=line - num(s.discount)*line/sub; r.cost+=num(i.qty)*num(i.cost); }); });
-  const pr = Object.entries(rows).sort((a,b)=>b[1].rev-a[1].rev);
-  const expCat = {}; f.exp.forEach(e=>expCat[e.category]=(expCat[e.category]||0)+num(e.amount));
-  return `<div class="head"><div><h1>Reports</h1><p class="sub">Profit and product performance by month</p></div>
-    <select style="width:auto" data-act="noop" onchange="reportMonth=this.value;render()">${months.map(m=>`<option value="${m}" ${m===reportMonth?"selected":""}>${fmtMonth(m)}</option>`).join("")}</select></div>
-  <div class="figures">
-    <div><small>Sales</small><b class="num">${inr0(f.revenue)}</b></div>
-    <div><small>Cost of goods sold</small><b class="num">${inr0(f.cost)}</b></div>
-    <div><small>Expenses</small><b class="num">${inr0(f.expenses)}</b></div>
-    <div><small>Net profit</small><b class="num ${f.net<0?'neg':'pos'}">${inr0(f.net)}</b></div>
-  </div>
-  <h2>By product</h2>
-  <div class="panel tablewrap"><table><thead><tr><th>Product</th><th>Bags sold</th><th>Sales</th><th>Cost</th><th>Profit</th><th>Margin / bag</th></tr></thead>
-  <tbody>${pr.length?pr.map(([pid,r])=>`<tr><td>${esc(pname(pid))}</td><td class="num">${r.q}</td><td class="num">${inr0(r.rev)}</td><td class="num">${inr0(r.cost)}</td><td class="num ${r.rev-r.cost<0?'neg':''}">${inr0(r.rev-r.cost)}</td><td class="num">${r.q?inr((r.rev-r.cost)/r.q):"—"}</td></tr>`).join(""):`<tr><td colspan="6" style="text-align:center;color:var(--muted)">No sales this month</td></tr>`}</tbody>
-  ${pr.length?`<tfoot><tr><td>Total</td><td class="num">${pr.reduce((a,[,r])=>a+r.q,0)}</td><td class="num">${inr0(f.revenue)}</td><td class="num">${inr0(f.cost)}</td><td class="num">${inr0(f.gross)}</td><td></td></tr></tfoot>`:""}</table></div>
-  ${Object.keys(expCat).length?`<h2>Expenses by type</h2><div class="panel">${Object.entries(expCat).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="item"><div class="main"><div class="t">${esc(k)}</div></div><div class="amt num">${inr0(v)}</div></div>`).join("")}</div>`:""}
-  <div class="row" style="margin-top:18px"><button class="btn ghost" data-act="csvMonth">Download ${fmtMonth(reportMonth)} sales (CSV)</button></div>`;
+  f.sales.forEach(s => { const sub = saleSub(s) || 1; (s.items || []).forEach(i => { const r = rows[i.productId] || (rows[i.productId] = {q: 0, rev: 0, cost: 0}); const line = num(i.qty) * num(i.rate);
+    r.q += num(i.qty); r.rev += line - num(s.discount) * line / sub; r.cost += num(i.qty) * num(i.cost); }); });
+  const pr = Object.entries(rows).sort((a, b) => b[1].rev - a[1].rev);
+  const last12 = [...Array(12)].map((_, i) => { let x = m; for(let k = 0; k < 11 - i; k++) x = prevMonth(x); return x; });
+  const rev12 = last12.map(x => monthFigures(x).revenue), net12 = last12.map(x => monthFigures(x).net);
+  const cats = {}; f.exp.forEach(e => cats[e.category] = (cats[e.category] || 0) + num(e.amount));
+  const kpi = (l, v, d, cls = "") => `<div class="card kpi"><div class="l">${l}</div><div class="v num ${cls}">${v}</div><div class="d">${d || "&nbsp;"}</div></div>`;
+  return `<div class="toolbar"><select id="rmonth" data-f="reportMonth" style="width:auto">${months.map(x => `<option value="${x}" ${x === m ? "selected" : ""}>${fmtMonth(x)}</option>`).join("")}</select>
+    <span style="flex:1"></span><button class="btn sec" data-act="csvMonth">${icon("backup")}Export ${fmtMonth(m)} sales</button></div>
+  <div class="stack">
+    <div class="kpis">${kpi("Sales", inr0(f.revenue), delta(f.revenue, pf.revenue))}${kpi("Cost of goods sold", inr0(f.cost), `Gross margin ${f.revenue ? (f.gross / f.revenue * 100).toFixed(1) : 0}%`)}${kpi("Expenses", inr0(f.expenses), delta(f.expenses, pf.expenses))}${kpi("Net profit", inr0(f.net), delta(f.net, pf.net), f.net < 0 ? "down" : "")}</div>
+    <section class="card"><div class="card-h"><h3>Last 12 months</h3><span class="note">Sales (bars)</span></div><div class="card-b">${barChart(rev12, last12.map(x => fmtMonth(x).slice(0, 3)), {h: 190, w: 1000})}
+      <div class="tw" style="margin-top:8px"><table class="t"><thead><tr><th>Month</th>${last12.slice(-6).map(x => `<th class="n">${fmtMonth(x).slice(0, 3)}</th>`).join("")}</tr></thead><tbody>
+      <tr><td>Sales</td>${rev12.slice(-6).map(v => `<td class="n">${shortAmt(v)}</td>`).join("")}</tr><tr><td>Net profit</td>${net12.slice(-6).map(v => `<td class="n ${v < 0 ? "down" : ""}">${shortAmt(Math.abs(v)) === "0" ? "0" : (v < 0 ? "−" : "") + shortAmt(Math.abs(v))}</td>`).join("")}</tr></tbody></table></div></div></section>
+    <div class="cols">
+      <section class="card"><div class="card-h"><h3>Product performance</h3><span class="note">${fmtMonth(m)}</span></div>
+        <div class="tw"><table class="t stackable"><thead><tr><th>Product</th><th class="n">Bags</th><th class="n">Sales</th><th class="n">Cost</th><th class="n">Profit</th><th class="n">Per bag</th></tr></thead><tbody>
+        ${pr.length ? pr.map(([pid, r]) => `<tr><td class="lead"><span class="primary">${esc(pname(pid))}</span></td><td class="n" data-l="Bags">${r.q}</td><td class="n" data-l="Sales">${inr0(r.rev)}</td><td class="n" data-l="Cost">${inr0(r.cost)}</td><td class="n" data-l="Profit"><span class="${r.rev - r.cost < 0 ? "down" : ""}">${inr0(r.rev - r.cost)}</span></td><td class="n" data-l="Per bag">${r.q ? inr((r.rev - r.cost) / r.q) : "—"}</td></tr>`).join("") : `<tr><td colspan="6" class="empty">No sales this month</td></tr>`}
+        </tbody>${pr.length ? `<tfoot><tr><td>Total</td><td class="n">${f.bags}</td><td class="n">${inr0(f.revenue)}</td><td class="n">${inr0(f.cost)}</td><td class="n">${inr0(f.gross)}</td><td></td></tr></tfoot>` : ""}</table></div></section>
+      <section class="card"><div class="card-h"><h3>Profit &amp; loss</h3><span class="note">${fmtMonth(m)}</span></div><div class="list">
+        <div class="row"><div class="grow">Sales</div><b class="num">${inr0(f.revenue)}</b></div>
+        <div class="row"><div class="grow">Cost of goods sold</div><span class="num">−${inr0(f.cost).replace("₹", "₹")}</span></div>
+        <div class="row" style="background:var(--subtle)"><div class="grow"><b>Gross profit</b></div><b class="num">${inr0(f.gross)}</b></div>
+        ${Object.entries(cats).sort((a, b) => b[1] - a[1]).map(([k, v]) => `<div class="row"><div class="grow muted">${esc(k)}</div><span class="num">−${inr0(v)}</span></div>`).join("")}
+        <div class="row" style="background:var(--subtle)"><div class="grow"><b>Net profit</b></div><b class="num ${f.net < 0 ? "down" : "up"}">${inr0(f.net)}</b></div>
+      </div></section>
+    </div>
+  </div>`;
 };
 
 V.products = () => {
-  const list = [...S.products].sort((a,b)=>(a.category||"").localeCompare(b.category||"")||a.name.localeCompare(b.name));
-  return `<div class="head"><div><h1>Products</h1><p class="sub">What you buy and sell</p></div><button class="btn" data-act="editProduct">Add product</button></div>
-  <div class="panel">${list.length?list.map(p=>`<div class="item click" data-act="editProduct" data-id="${p.id}"><div class="main"><div class="t">${esc(p.name)} ${p.active===false?'<span class="tag">Hidden</span>':""}</div><div class="m">${esc(p.category||"")}${p.bagKg?` · ${num(p.bagKg)} kg`:""}${p.mrp?` · MRP ${inr(p.mrp)}`:""} · reorder at ${num(p.lowStock)}</div></div><div class="amt" aria-hidden="true">Edit</div></div>`).join(""):`<div class="empty">No products yet.</div>`}</div>`;
+  const list = S.products.filter(p => matchQ(p.name, p.category || "")).sort((a, b) => (a.category || "").localeCompare(b.category || "") || a.name.localeCompare(b.name));
+  return `<div class="toolbar">${searchBox("Search products")}<span style="flex:1"></span>${isManager() ? `<button class="btn" data-act="editProduct">${icon("plus")}Add product</button>` : ""}</div>
+  <section class="card">${list.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>Product</th><th>Category</th><th class="n">Bag size</th><th class="n">MRP</th><th class="n">Reorder at</th><th class="n">In stock</th><th>Status</th></tr></thead><tbody>
+  ${list.map(p => `<tr class="${isManager() ? "click" : ""}" ${isManager() ? `data-act="editProduct" data-id="${p.id}"` : ""}><td class="lead"><span class="primary">${esc(p.name)}</span></td><td data-l="Category">${esc(p.category || "")}</td><td class="n" data-l="Bag size">${p.bagKg ? num(p.bagKg) + " kg" : "—"}</td><td class="n" data-l="MRP">${p.mrp ? inr(p.mrp) : `<span class="pill warn">Not set</span>`}</td><td class="n" data-l="Reorder at">${num(p.lowStock)}</td><td class="n" data-l="In stock">${stockOf(p.id)}</td><td data-l="Status">${p.active === false ? `<span class="pill">Hidden</span>` : `<span class="pill ok">Active</span>`}</td></tr>`).join("")}
+  </tbody></table></div>` : emptyState("No products yet", "Add Urea, DAP, SSP, seeds and anything else you sell.", isManager() ? `<button class="btn" data-act="editProduct">Add product</button>` : "")}</section>`;
 };
 
 V.suppliers = () => {
-  const list = [...S.suppliers].sort((a,b)=>a.name.localeCompare(b.name));
-  return `<div class="head"><div><h1>Suppliers</h1><p class="sub">Dealerships and market sellers</p></div><button class="btn" data-act="editSupplier">Add supplier</button></div>
-  <div class="panel">${list.length?list.map(s=>`<div class="item click" data-act="editSupplier" data-id="${s.id}"><div class="main"><div class="t">${esc(s.name)}</div><div class="m">${esc(s.type||"")}${s.phone?` · ${esc(s.phone)}`:""}${s.products?` · ${esc(s.products)}`:""}</div></div><div class="amt" aria-hidden="true">Edit</div></div>`).join(""):`<div class="empty">No suppliers yet.</div>`}</div>`;
+  const list = S.suppliers.filter(s => matchQ(s.name, s.type || "", s.products || "")).sort((a, b) => a.name.localeCompare(b.name));
+  return `<div class="toolbar">${searchBox("Search suppliers")}<span style="flex:1"></span>${isManager() ? `<button class="btn" data-act="editSupplier">${icon("plus")}Add supplier</button>` : ""}</div>
+  <section class="card">${list.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>Supplier</th><th>Type</th><th>Phone</th><th>Supplies</th><th class="n">Balance</th></tr></thead><tbody>
+  ${list.map(s => `<tr class="${isManager() ? "click" : ""}" ${isManager() ? `data-act="editSupplier" data-id="${s.id}"` : ""}><td class="lead"><span class="primary">${esc(s.name)}</span></td><td data-l="Type">${esc(s.type || "")}</td><td data-l="Phone">${esc(s.phone || "—")}</td><td data-l="Supplies"><div class="sub">${esc(s.products || "—")}</div></td><td class="n" data-l="Balance">${inr0(supBalance(s.id))}</td></tr>`).join("")}
+  </tbody></table></div>` : emptyState("No suppliers yet", "Add NFL and other dealerships, and the seed market.", isManager() ? `<button class="btn" data-act="editSupplier">Add supplier</button>` : "")}</section>`;
 };
 
-V.backup = () => { const last=getLast(); return `<h1>Backup &amp; restore</h1><p class="sub">Your records live only on this device — nothing is sent anywhere. If the phone is lost, reset, or the browser data is cleared, the records are gone unless you have a backup. Save one every week to WhatsApp, Google Drive, or email.</p>
-  <p class="sub">Last backup: <b>${last?new Date(last).toLocaleString("en-IN"):"never"}</b></p>
-  <div class="row"><button class="btn" data-act="backupJson">Save full backup</button><button class="btn quiet" data-act="restore">Restore from backup…</button><input type="file" id="restoreFile" accept=".json,application/json" hidden onchange="restoreFrom(this.files[0]);this.value=''"></div>
-  <h2>Exports for Excel / CA</h2><div class="row"><button class="btn ghost" data-act="csvAll">All sales (CSV)</button><button class="btn ghost" data-act="csvStock">Stock report (CSV)</button></div>
-  <p class="sub" style="margin-top:16px">${COLS.map(c=>`${S[c].length} ${c}`).join(" · ")}</p>`; };
+V.team = () => {
+  const ms = APP.members.length ? APP.members : [APP.member];
+  const joinUrl = location.origin + location.pathname;
+  return `<div class="stack">
+  ${isOwner() ? `<section class="card"><div class="card-h"><h3>Invite people</h3><span class="note">Anyone with the code joins as Staff</span></div><div class="card-b">
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div><div class="small muted">Join code</div><div class="num" style="font-size:26px;font-weight:750;letter-spacing:.12em">${esc(APP.shop.join_code || "—")}</div></div>
+    <span style="flex:1"></span><a class="btn sec" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`Join ${APP.shop.name} on our shop app:\n${joinUrl}\n\n1. Open the link in Safari/Chrome and create an account\n2. Choose "Join a shop" and enter code: ${APP.shop.join_code}\n3. Add it to your home screen`)}">${icon("whatsapp")}Share on WhatsApp</a>
+    <button class="btn ghost" data-act="rotateCode">${icon("refresh")}New code</button></div>
+    <p class="small muted" style="margin:12px 0 0">Change the code after everyone has joined, so nobody else can use it.</p></div></section>` : ""}
+  <section class="card"><div class="card-h"><h3>Members</h3><span class="note">${ms.filter(m => m.active !== false).length} active</span></div>
+    <div class="tw"><table class="t stackable"><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Joined</th><th>Status</th></tr></thead><tbody>
+    ${ms.map(m => `<tr><td class="lead"><div style="display:flex;gap:10px;align-items:center"><span class="avatar">${esc(initials(m.display_name))}</span><span class="primary">${esc(m.display_name)}${m.user_id === APP.user.id ? " (you)" : ""}</span></div></td>
+      <td data-l="Email">${esc(m.email || "—")}</td>
+      <td data-l="Role">${isOwner() && m.user_id !== APP.user.id && m.role !== "owner" ? `<select data-act="noop" onchange="setRole('${m.user_id}', this.value)" style="width:auto;min-height:32px">${["manager","staff"].map(r => `<option value="${r}" ${m.role === r ? "selected" : ""}>${cap(r)}</option>`).join("")}</select>` : `<span class="pill ${m.role === "owner" ? "info" : ""}">${cap(m.role)}</span>`}</td>
+      <td data-l="Joined">${m.joined_at ? fmtDate(m.joined_at.slice(0, 10)) : "—"}</td>
+      <td data-l="Status">${m.active === false ? `<span class="pill bad">Removed</span>${isOwner() ? ` <button class="btn ghost sm" data-act="setActive" data-id="${m.user_id}:1">Restore</button>` : ""}` : `<span class="pill ok">Active</span>${isOwner() && m.user_id !== APP.user.id && m.role !== "owner" ? ` <button class="btn ghost sm" data-act="setActive" data-id="${m.user_id}:0">Remove</button>` : ""}`}</td></tr>`).join("")}
+    </tbody></table></div></section>
+  <section class="card"><div class="card-h"><h3>What each role can do</h3></div><div class="tw"><table class="t"><thead><tr><th>Permission</th><th>Owner</th><th>Manager</th><th>Staff</th></tr></thead><tbody>
+    ${[["Record sales, purchases, payments, expenses", 1, 1, 1], ["Edit or delete own entries (within 24 hours)", 1, 1, 1], ["Edit or delete anyone's entries", 1, 1, 0], ["See profit, costs and reports", 1, 1, 0], ["Manage products and suppliers", 1, 1, 0], ["View activity log", 1, 1, 0], ["Invite, remove and change roles", 1, 0, 0]].map(([l, a, b, c]) =>
+      `<tr><td>${l}</td>${[a, b, c].map(x => `<td>${x ? `<span class="pill ok">Yes</span>` : `<span class="muted">—</span>`}</td>`).join("")}</tr>`).join("")}
+  </tbody></table></div></section></div>`;
+};
 
-/* ---------- Sheet (forms) ---------- */
-const dlg = $("#dlg"), sheet = $("#sheet");
-function openSheet(title, bodyHtml, footHtml, onSubmit, onInput){
-  sheet.innerHTML = `<header><h3>${title}</h3><button type="button" class="x" aria-label="Close" onclick="dlg.close()">×</button></header><div class="body">${bodyHtml}<div class="err" id="ferr"></div></div><footer>${footHtml}</footer>`;
-  sheet.onsubmit = async e => { e.preventDefault(); $("#ferr").textContent=""; try{ const ok = await onSubmit(new FormData(sheet)); if(ok!==false) dlg.close(); }catch(err){ $("#ferr").textContent = err.message || "Could not save"; } };
+let AUDIT = null;
+V.activity = () => {
+  if(!isManager()) return emptyState("Not available", "The activity log is for owners and managers.", "");
+  if(AUDIT === null){ loadAudit(); return `<section class="card"><div class="empty">Loading activity…</div></section>`; }
+  if(AUDIT === "offline") return `<section class="card">${emptyState("You're offline", "The activity log needs an internet connection.", `<button class="btn sec" data-act="reloadAudit">Try again</button>`)}</section>`;
+  const labels = {create: ["Created", "ok"], update: ["Edited", "info"], delete: ["Deleted", "bad"], restore: ["Restored", "info"]};
+  return `<div class="toolbar"><span class="muted small">Last 200 changes by everyone in the shop</span><span style="flex:1"></span><button class="btn sec" data-act="reloadAudit">${icon("refresh")}Refresh</button></div>
+  <section class="card">${AUDIT.length ? `<div class="tw"><table class="t stackable"><thead><tr><th>When</th><th>Who</th><th>Action</th><th>Record</th><th>Details</th></tr></thead><tbody>
+  ${AUDIT.map(a => { const [l, c] = labels[a.action] || [a.action, ""]; const d = a.new_data || a.old_data || {};
+    return `<tr><td data-l="When">${fmtWhen(a.at)}</td><td class="lead"><span class="primary">${esc(memberName(a.actor))}</span></td><td data-l="Action"><span class="pill ${c}">${l}</span></td><td data-l="Record">${esc(cap(a.collection.replace(/s$/, "")))}</td><td data-l="Details"><div class="sub">${esc(describe(a.collection, d, a.old_data))}</div></td></tr>`; }).join("")}
+  </tbody></table></div>` : emptyState("No activity yet", "", "")}</section>`;
+};
+async function loadAudit(){
+  if(!online()){ AUDIT = "offline"; scheduleRender(); return; }
+  const { data, error } = await APP.sb.from("audit_log").select("*").eq("shop_id", APP.shop.id).order("at", {ascending: false}).limit(200);
+  AUDIT = error ? [] : data; scheduleRender();
+}
+function describe(col, d, old){
+  try{
+    if(col === "sales") return `${d.customerId ? custName(d.customerId) || "Customer" : "Walk-in"} · ${itemsText(d.items)} · ${inr0(saleTotal(d))}` + (old && saleTotal(old) !== saleTotal(d) ? ` (was ${inr0(saleTotal(old))})` : "");
+    if(col === "purchases") return `${supName(d.supplierId)} · ${itemsText(d.items)} · ${inr0(purTotal(d))}`;
+    if(col === "payments") return `${d.kind === "customer" ? "From " + custName(d.partyId) : "To " + supName(d.partyId)} · ${inr0(d.amount)} ${d.mode || ""}`;
+    if(col === "expenses") return `${d.category} · ${inr0(d.amount)}`;
+    if(col === "adjustments") return `${pname(d.productId)} · ${num(d.qty) > 0 ? "+" : ""}${num(d.qty)} bags · ${d.reason || ""}`;
+    if(col === "products") return `${d.name}${old && old.mrp !== d.mrp ? ` · MRP ${inr(old.mrp || 0)} → ${inr(d.mrp || 0)}` : ""}`;
+    return d.name || "";
+  }catch(e){ return ""; }
+}
+
+V.backup = () => {
+  const n = pendingCount();
+  return `<div class="stack">
+  <section class="card"><div class="card-h"><h3>Sync status</h3></div><div class="card-b">
+    <p style="margin:0 0 6px">${online() ? (n ? `${n} change${n > 1 ? "s" : ""} waiting to upload.` : "Everything on this device is synced.") : `You're offline. ${n} change${n === 1 ? "" : "s"} will upload when you're back online.`}</p>
+    <p class="small muted" style="margin:0 0 12px">Last synced: ${APP.sync.last ? fmtWhen(APP.sync.last) : "not yet"}${APP.sync.error ? ` · ${esc(APP.sync.error)}` : ""}</p>
+    <button class="btn sec" data-act="syncNow">${icon("refresh")}Sync now</button></div></section>
+  <section class="card"><div class="card-h"><h3>Export</h3><span class="note">For Excel, your CA, or safekeeping</span></div><div class="card-b" style="display:flex;gap:10px;flex-wrap:wrap">
+    <button class="btn" data-act="backupJson">${icon("backup")}Full backup (JSON)</button><button class="btn sec" data-act="csvAll">All sales (CSV)</button><button class="btn sec" data-act="csvStock">Stock report (CSV)</button><button class="btn sec" data-act="csvKhata">Khata balances (CSV)</button></div></section>
+  ${isManager() ? `<section class="card"><div class="card-h"><h3>Import</h3></div><div class="card-b"><p class="small muted" style="margin:0 0 12px">Bring in records from the earlier offline version of the app, or from a backup. Records are added to the shop and shared with everyone; nothing existing is removed.</p>
+    <button class="btn sec" data-act="importBackup">Import from backup file…</button><input type="file" id="importFile" accept=".json,application/json" hidden></div></section>` : ""}
+  </div>`;
+};
+
+V.more = () => {
+  const items = [["khata","Khata","Customer udhaar and supplier balances"],["expenses","Expenses","Labour, freight, rent, electricity"],["reports","Reports","Profit, product performance, trends", () => seesProfit()],["activity","Activity","Who changed what, and when", () => isManager()],["products","Products","Items, MRP, bag size, reorder levels"],["suppliers","Suppliers","NFL, other dealerships, market"],["team","Team","Members, roles, join code"],["backup","Backup & export","Sync status, CSV exports, import"]];
+  return `<section class="card"><div class="list">${items.filter(i => !i[3] || i[3]()).map(([k, t, d]) => `<div class="row click" data-nav="${k}"><span class="avatar" style="border-radius:9px">${icon(k)}</span><div class="grow"><div style="font-weight:600">${t}</div><div class="small muted">${d}</div></div><span class="muted" aria-hidden="true">›</span></div>`).join("")}</div></section>
+  <section class="card" style="margin-top:16px"><div class="list"><div class="row"><span class="avatar">${esc(initials(APP.member.display_name))}</span><div class="grow"><div style="font-weight:600">${esc(APP.member.display_name)}</div><div class="small muted">${esc(cap(role()))} · ${esc(APP.user.email || "")}</div></div><button class="btn sec sm" data-act="signOut">${icon("logout")}Sign out</button></div></div></section>`;
+};
+
+function backupBanner(){ return ""; }
+
+/* ---------- Events ---------- */
+document.addEventListener("click", e => {
+  const n = e.target.closest("[data-nav]"); if(n){ closeMenu(); go(n.dataset.nav); return; }
+  const a = e.target.closest("[data-act]"); if(a && ACT[a.dataset.act]){ if(a.tagName === "SELECT") return; e.preventDefault(); ACT[a.dataset.act](a.dataset.id, a, e); return; }
+  if(!e.target.closest(".menu")) closeMenu();
+});
+document.addEventListener("input", e => {
+  const k = e.target.dataset && e.target.dataset.f; if(!k || !e.target.closest("#root")) return;
+  APP.f[k] = e.target.value; render();
+});
+document.addEventListener("change", e => {
+  if(e.target.id === "importFile"){ importFrom(e.target.files[0]); e.target.value = ""; }
+});
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") closeMenu();
+  if(dlgEl.open || /INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName || "") || e.metaKey || e.ctrlKey || e.altKey || !APP.shop) return;
+  if(e.key === "s"){ e.preventDefault(); ACT.newSale(); } if(e.key === "p"){ e.preventDefault(); ACT.newPurchase(); } if(e.key === "/"){ const q = $("#q"); if(q){ e.preventDefault(); q.focus(); } }
+});
+
+let menuEl = null;
+function closeMenu(){ if(menuEl){ menuEl.remove(); menuEl = null; } }
+function openMenu(anchor, html){
+  closeMenu(); menuEl = document.createElement("div"); menuEl.className = "menu"; menuEl.innerHTML = html; document.body.appendChild(menuEl);
+  const r = anchor.getBoundingClientRect(), mw = menuEl.offsetWidth, mh = menuEl.offsetHeight;
+  let left = Math.min(window.innerWidth - mw - 8, Math.max(8, r.right - mw)), top = r.bottom + 6;
+  if(top + mh > window.innerHeight - 8) top = Math.max(8, r.top - mh - 6);
+  if(r.left < 260 && r.top > window.innerHeight / 2) left = Math.max(8, r.left);
+  menuEl.style.left = left + "px"; menuEl.style.top = top + "px";
+  menuEl.querySelector("button")?.focus();
+}
+
+/* ---------- Dialog / forms ---------- */
+const dlgEl = $("#dlg"), sheet = $("#sheet");
+function openSheet({title, sub = "", body, foot, onSubmit, onInput, narrow = false}){
+  dlgEl.classList.toggle("narrow", narrow);
+  sheet.innerHTML = `<header><div><h3>${title}</h3>${sub ? `<p>${sub}</p>` : ""}</div><button type="button" class="icon-btn" aria-label="Close" onclick="dlgEl.close()">${icon("x")}</button></header><div class="body">${body}<div class="err" id="ferr" role="alert"></div></div><footer>${foot}</footer>`;
+  sheet.onsubmit = async e => { e.preventDefault(); const btn = sheet.querySelector("[type=submit]"); $("#ferr").textContent = "";
+    try{ if(btn) btn.disabled = true; const ok = onSubmit ? await onSubmit(new FormData(sheet)) : true; if(ok !== false) dlgEl.close(); }
+    catch(err){ $("#ferr").textContent = err.message || "Could not save"; } finally{ if(btn) btn.disabled = false; } };
   sheet.oninput = onInput || null; sheet.onchange = onInput || null;
-  dlg.showModal(); onInput && onInput();
-  const first = sheet.querySelector("input:not([type=hidden]),select"); first && first.focus();
+  if(!dlgEl.open) dlgEl.showModal();
+  onInput && onInput();
+  if(window.matchMedia("(min-width: 901px)").matches){ const first = sheet.querySelector(".body input:not([type=hidden]):not([type=date]),.body select"); first && first.focus(); }
 }
-const prodOptions = (sel) => `<option value="">Choose…</option>` + S.products.filter(p=>p.active!==false||p.id===sel).sort((a,b)=>a.name.localeCompare(b.name)).map(p=>`<option value="${p.id}" ${p.id===sel?"selected":""}>${esc(p.name)}</option>`).join("");
-const lineRow = (kind) => `<div class="line"><div class="p"><label>Product</label><select name="pid">${prodOptions()}</select></div><div><label>Bags</label><input name="qty" type="number" inputmode="decimal" min="0" step="any"></div><div><label>Rate / bag ₹</label><input name="rate" type="number" inputmode="decimal" min="0" step="any"></div><button type="button" class="x" aria-label="Remove line" onclick="this.parentElement.remove();sheet.oninput&&sheet.oninput()">×</button><div class="hint"></div></div>`;
-function readLines(){
-  return [...sheet.querySelectorAll(".line")].map(l=>({el:l,productId:l.querySelector("[name=pid]").value,qty:num(l.querySelector("[name=qty]").value),rate:num(l.querySelector("[name=rate]").value)}));
-}
-/* ---------- Local storage (IndexedDB, this device only) ---------- */
-const NATIVE = !!(window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.malhan);
-const native = msg => window.webkit.messageHandlers.malhan.postMessage(msg);
-const META = {lastBackup:0};
-const getLast = () => META.lastBackup || +(localStorage.getItem("malhan-last-backup")||0);
-async function setLast(t){ META.lastBackup=t; try{ localStorage.setItem("malhan-last-backup", t); }catch(e){} await persist(); }
-const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,8);
-let idb = null;
-function openIdb(){ return new Promise((res,rej)=>{ const r=indexedDB.open("malhan-trading",1); r.onupgradeneeded=()=>r.result.createObjectStore("kv"); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
-function idbGet(k){ return new Promise((res,rej)=>{ const t=idb.transaction("kv").objectStore("kv").get(k); t.onsuccess=()=>res(t.result); t.onerror=()=>rej(t.error); }); }
-function idbPut(k,v){ return new Promise((res,rej)=>{ const tx=idb.transaction("kv","readwrite"); tx.objectStore("kv").put(v,k); tx.oncomplete=()=>res(); tx.onerror=()=>rej(tx.error); }); }
-async function persist(){
-  const data={meta:META}; COLS.forEach(c=>data[c]=S[c]);
-  if(NATIVE){ await native({type:"save", json:JSON.stringify(data)}); return; }
-  if(!idb) throw new Error("This browser can't save data."); await idbPut("state", data);
-}
-function needDb(){ if(!idb && !NATIVE) throw new Error("Saving isn't available."); }
-async function save(col, data, id){
-  needDb();
-  id = id || uid();
-  const rec = {...data, id, createdAt: data.createdAt || Date.now()};
-  const i = S[col].findIndex(x=>x.id===id);
-  if(i>=0) S[col][i]=rec; else S[col].push(rec);
-  await persist(); render();
-  return id;
-}
-async function removeDoc(path){ needDb(); const [col,id]=path.split("/"); S[col]=S[col].filter(x=>x.id!==id); await persist(); render(); }
+const req = (v, msg) => { if(!v || !String(v).trim()) throw new Error(msg); return String(v).trim(); };
+const prodOptions = sel => `<option value="">Select product…</option>` + ["Fertilizer","Seed","Pesticide","Other"].map(cat => {
+  const ps = S.products.filter(p => (p.category || "Other") === cat && (p.active !== false || p.id === sel)).sort((a, b) => a.name.localeCompare(b.name));
+  return ps.length ? `<optgroup label="${cat}">${ps.map(p => `<option value="${p.id}" ${p.id === sel ? "selected" : ""}>${esc(p.name)}</option>`).join("")}</optgroup>` : ""; }).join("");
+const lineRow = (it = {}) => `<div class="line"><div class="p"><select name="pid" aria-label="Product">${prodOptions(it.productId)}</select></div><div><input name="qty" type="number" inputmode="decimal" min="0" step="any" placeholder="Bags" aria-label="Bags" value="${it.qty ?? ""}"></div><div><input name="rate" type="number" inputmode="decimal" min="0" step="any" placeholder="Rate ₹" aria-label="Rate per bag" value="${it.rate ?? ""}"></div><div class="amt">₹0</div><button type="button" class="icon-btn" aria-label="Remove line" onclick="this.closest('.line').remove();sheet.oninput&&sheet.oninput()">${icon("x")}</button><div class="hint"></div></div>`;
+const linesBlock = items => `<div class="lines"><div class="lines-h"><span>Product</span><span>Bags</span><span>Rate / bag</span><span class="right">Amount</span><span></span></div><div id="lines">${(items && items.length ? items : [{}]).map(lineRow).join("")}</div></div><button type="button" class="btn ghost sm" onclick="document.getElementById('lines').insertAdjacentHTML('beforeend', lineRow());">${icon("plus")}Add another product</button>`;
+function readLines(){ return [...sheet.querySelectorAll(".line")].map(l => ({el: l, productId: l.querySelector("[name=pid]").value, qty: num(l.querySelector("[name=qty]").value), rate: num(l.querySelector("[name=rate]").value)})); }
 
 const ACT = {
   noop(){},
-  khataTab(id){ khataTab=id; render(); },
-  async del(path){
-    if(!confirm("Delete this entry? This can't be undone.")) return;
-    try{ await removeDoc(path); }catch(e){ alert(e.message||"Could not delete"); }
+  setF(id){ const [k, v] = id.split(":"); APP.f[k] = v; render(); },
+  newMenu(_, el){
+    openMenu(el, `<button data-act="newSale">${icon("sales")}New sale<span class="kbd">S</span></button><button data-act="newPurchase">${icon("purchases")}New purchase<span class="kbd">P</span></button><hr>
+      <button data-act="newReceipt">${icon("rupee")}Receive payment</button><button data-act="newSupPay">${icon("khata")}Pay supplier</button><button data-act="newExpense">${icon("expenses")}Add expense</button><button data-act="newAdjust">${icon("adjust")}Adjust stock</button><hr>
+      <button data-act="editCustomer">${icon("team")}New customer</button>`);
   },
+  accountMenu(_, el){ openMenu(el, `<button data-nav="team">${icon("team")}Team</button><button data-nav="backup">${icon("backup")}Backup &amp; sync</button><hr><button data-act="signOut">${icon("logout")}Sign out</button>`); },
+  syncInfo(){ go("backup"); },
+  syncNow(){ syncNow().then(() => toast(pendingCount() ? "Some changes are still waiting" : "Everything is synced")); },
+  async delRec(id){ closeMenu(); if(!confirm("Delete this entry? Everyone will see it removed.")) return; await removeRec(id); dlgEl.open && dlgEl.close(); toast("Deleted"); },
+  reloadAudit(){ AUDIT = null; render(); },
+  async rotateCode(){ if(!confirm("Create a new join code? The old code will stop working.")) return;
+    const { data, error } = await APP.sb.rpc("rotate_join_code"); if(error) return alert(error.message); APP.shop.join_code = data; cacheMembership(); render(); toast("New join code created"); },
+  async setActive(id){ const [u, a] = id.split(":"); const m = APP.members.find(x => x.user_id === u);
+    if(a === "0" && !confirm(`Remove ${m?.display_name || "this member"}? They will lose access immediately. Their past entries stay.`)) return;
+    const { error } = await APP.sb.from("members").update({active: a === "1"}).eq("shop_id", APP.shop.id).eq("user_id", u);
+    if(error) return alert(error.message); await loadMembers(); toast(a === "1" ? "Access restored" : "Member removed"); },
+  signOut(){ signOut(); },
 
-  newSale(){
-    if(!S.products.length){ alert("Add your products first (More → Products)."); return; }
-    const custOpts = `<option value="">Walk-in customer</option>` + [...S.customers].sort((a,b)=>a.name.localeCompare(b.name)).map(c=>`<option value="${c.id}">${esc(c.name)}${c.village?` (${esc(c.village)})`:""}</option>`).join("") + `<option value="__new">+ New customer…</option>`;
-    openSheet("New sale", `
-      <div class="grid2"><label class="f"><span>Date</span><input type="date" name="date" value="${today()}" required></label>
-      <label class="f"><span>Customer</span><select name="cid">${custOpts}</select></label></div>
-      <div id="newcust" hidden class="grid3"><label class="f"><span>Name</span><input name="cname"></label><label class="f"><span>Village</span><input name="cvillage"></label><label class="f"><span>Phone</span><input name="cphone" inputmode="tel"></label></div>
-      <div class="lines" id="lines">${lineRow()}</div>
-      <button type="button" class="btn quiet small" id="addl">+ Add product</button>
-      <div class="grid3" style="margin-top:14px"><label class="f"><span>Discount ₹</span><input name="discount" type="number" inputmode="decimal" min="0" step="any"></label>
-      <label class="f"><span>Paid now ₹</span><input name="paid" type="number" inputmode="decimal" min="0" step="any" placeholder="Full amount"></label>
-      <label class="f"><span>Paid by</span><select name="mode"><option>Cash</option><option>UPI</option><option>Cheque</option><option>Credit (udhaar)</option></select></label></div>
-      <label class="f"><span>Note</span><input name="note" placeholder="Optional"></label>`,
-      `<div class="total num" id="tot">₹0<small>&nbsp;</small></div><button class="btn" type="submit">Save sale</button>`,
-      async fd => {
-        const lines = readLines().filter(l=>l.productId&&l.qty>0);
-        if(!lines.length) throw new Error("Add at least one product with bags.");
+  newSale(id){
+    closeMenu();
+    if(!S.products.length){ alert(isManager() ? "Add your products first (Setup → Products)." : "Ask the owner to add products first."); return; }
+    const s = id ? S.sales.find(x => x.id === id) : null;
+    const custOpts = `<option value="">Walk-in customer</option>` + [...S.customers].sort((a, b) => a.name.localeCompare(b.name)).map(c => `<option value="${c.id}" ${s?.customerId === c.id ? "selected" : ""}>${esc(c.name)}${c.village ? ` · ${esc(c.village)}` : ""}</option>`).join("") + `<option value="__new">+ Add new customer…</option>`;
+    openSheet({
+      title: s ? `Edit bill ${billNo(s)}` : "New sale", sub: s ? "Changes are logged in the activity history" : "Bill a customer",
+      body: `<div class="g2"><label class="f"><span>Date</span><input type="date" name="date" value="${s?.date || today()}" required></label>
+        <label class="f"><span>Customer</span><select name="cid">${custOpts}</select></label></div>
+        <div id="newcust" hidden class="g3"><label class="f"><span>Customer name</span><input name="cname"></label><label class="f"><span>Village</span><input name="cvillage"></label><label class="f"><span>Mobile</span><input name="cphone" inputmode="tel"></label></div>
+        ${linesBlock(s?.items)}
+        <div class="g3" style="margin-top:14px"><label class="f"><span>Discount ₹</span><input name="discount" type="number" inputmode="decimal" min="0" step="any" value="${s?.discount || ""}"></label>
+        <label class="f"><span>Received now ₹</span><input name="paid" type="number" inputmode="decimal" min="0" step="any" placeholder="Full amount" value="${s ? num(s.paid) : ""}"></label>
+        <label class="f"><span>Payment mode</span><select name="mode">${["Cash","UPI","Cheque","Credit (udhaar)"].map(m => `<option ${s?.mode === m ? "selected" : ""}>${m}</option>`).join("")}</select></label></div>
+        <label class="f"><span>Note</span><input name="note" placeholder="Optional" value="${esc(s?.note || "")}"></label>`,
+      foot: `<div class="total num" id="tot">₹0<small>&nbsp;</small></div><div style="display:flex;gap:8px"><button type="button" class="btn sec" onclick="dlgEl.close()">Cancel</button><button class="btn" type="submit">${s ? "Save changes" : "Save sale"}</button></div>`,
+      onSubmit: async fd => {
+        const lines = readLines().filter(l => l.productId && l.qty > 0);
+        if(!lines.length) throw new Error("Add at least one product with number of bags.");
+        if(lines.some(l => l.rate <= 0)) throw new Error("Enter a rate for every product.");
         let cid = fd.get("cid");
-        if(cid==="__new"){ const n=(fd.get("cname")||"").trim(); if(!n) throw new Error("Enter the new customer's name."); cid = await save("customers",{name:n,village:(fd.get("cvillage")||"").trim(),phone:(fd.get("cphone")||"").trim()}); }
-        const items = lines.map(l=>({productId:l.productId,qty:l.qty,rate:l.rate,cost:Math.round(avgCost(l.productId)*100)/100}));
-        const total = items.reduce((a,i)=>a+i.qty*i.rate,0) - num(fd.get("discount"));
-        const mode = fd.get("mode");
-        const paidRaw = fd.get("paid");
-        const paid = mode==="Credit (udhaar)" && paidRaw==="" ? 0 : paidRaw==="" ? total : num(paidRaw);
-        if(paid < total-0.5 && !cid) throw new Error("Choose or add a customer for a credit sale, so the udhaar is tracked.");
-        await save("sales",{date:fd.get("date"),customerId:cid||"",items,discount:num(fd.get("discount")),paid,mode,note:(fd.get("note")||"").trim()});
+        if(cid === "__new") cid = await save("customers", {name: req(fd.get("cname"), "Enter the new customer's name."), village: (fd.get("cvillage") || "").trim(), phone: (fd.get("cphone") || "").trim()});
+        const items = lines.map(l => { const old = s?.items?.find(i => i.productId === l.productId); return {productId: l.productId, qty: l.qty, rate: l.rate, cost: old ? num(old.cost) : r2(avgCost(l.productId))}; });
+        const total = items.reduce((a, i) => a + i.qty * i.rate, 0) - num(fd.get("discount"));
+        const mode = fd.get("mode"), raw = fd.get("paid");
+        const paid = raw === "" ? (mode === "Credit (udhaar)" ? 0 : total) : num(raw);
+        if(paid < total - 0.5 && !cid) throw new Error("Choose or add the customer for a credit sale so the udhaar is tracked.");
+        await save("sales", {...(s || {}), date: fd.get("date"), customerId: cid || "", items, discount: num(fd.get("discount")), paid, mode, note: (fd.get("note") || "").trim()}, s?.id);
+        toast(s ? "Bill updated" : `Sale saved · ${inr0(total)}`);
       },
-      () => {
-        $("#newcust").hidden = sheet.cid.value!=="__new";
-        let sub=0;
-        readLines().forEach(l=>{
-          const hint = l.el.querySelector(".hint"); const p=P(l.productId);
-          if(l.productId && l.el.dataset.filled!==l.productId){ const r=l.el.querySelector("[name=rate]"); if(!r.value){ r.value = lastRate(l.productId,"sales") || num(p?.mrp) || ""; l.rate=num(r.value);} l.el.dataset.filled=l.productId; }
-          sub += l.qty*l.rate;
-          if(!l.productId){ hint.textContent=""; return; }
-          const st=stockOf(l.productId), c=avgCost(l.productId), msgs=[];
-          msgs.push(`${st} in stock`); if(c) msgs.push(`cost ${inr(c)}`); if(c&&l.rate) msgs.push(`margin ${inr(l.rate-c)}/bag`);
-          let bad=false;
-          if(l.qty>st){ msgs.push("more than stock"); bad=true; }
-          if(p?.mrp && l.rate>num(p.mrp)){ msgs.push(`above MRP ${inr(p.mrp)}`); bad=true; }
-          hint.textContent = msgs.join(" · "); hint.className = "hint" + (bad?" bad":"");
+      onInput: () => {
+        $("#newcust").hidden = sheet.cid.value !== "__new";
+        let sub = 0;
+        readLines().forEach(l => {
+          const hint = l.el.querySelector(".hint"), p = P(l.productId), rEl = l.el.querySelector("[name=rate]");
+          if(l.productId && l.el.dataset.filled !== l.productId){ if(!rEl.value){ rEl.value = lastRate(l.productId, "sales") || num(p?.mrp) || ""; l.rate = num(rEl.value); } l.el.dataset.filled = l.productId; }
+          sub += l.qty * l.rate; l.el.querySelector(".amt").textContent = inr(l.qty * l.rate);
+          if(!l.productId){ hint.textContent = ""; return; }
+          const st = stockOf(l.productId) + (s?.items || []).filter(i => i.productId === l.productId).reduce((a, i) => a + num(i.qty), 0), c = avgCost(l.productId), msgs = [`${st} in stock`];
+          if(seesProfit() && c){ msgs.push(`cost ${inr(c)}`); if(l.rate) msgs.push(`margin ${inr(l.rate - c)}/bag`); }
+          let bad = false;
+          if(l.qty > st){ msgs.push("more than available stock"); bad = true; }
+          if(p?.mrp && l.rate > num(p.mrp)){ msgs.push(`above MRP ${inr(p.mrp)}`); bad = true; }
+          hint.textContent = msgs.join(" · "); hint.className = "hint" + (bad ? " bad" : "");
         });
         const total = sub - num(sheet.discount.value);
-        const paid = sheet.paid.value==="" ? (sheet.mode.value==="Credit (udhaar)"?0:total) : num(sheet.paid.value);
-        $("#tot").innerHTML = `${inr(total)}<small>${paid<total-0.5?`${inr(total-paid)} on credit`:"Paid in full"}</small>`;
-      });
-    $("#addl").onclick = () => { $("#lines").insertAdjacentHTML("beforeend", lineRow()); };
+        const paid = sheet.paid.value === "" ? (sheet.mode.value === "Credit (udhaar)" ? 0 : total) : num(sheet.paid.value);
+        $("#tot").innerHTML = `${inr(total)}<small>${paid < total - 0.5 ? `${inr(total - paid)} on credit` : "Paid in full"}</small>`;
+      }
+    });
   },
 
-  newPurchase(){
-    if(!S.products.length){ alert("Add your products first (More → Products)."); return; }
-    if(!S.suppliers.length){ alert("Add a supplier first (More → Suppliers)."); return; }
-    openSheet("New purchase", `
-      <div class="grid3"><label class="f"><span>Date</span><input type="date" name="date" value="${today()}" required></label>
-      <label class="f"><span>Supplier</span><select name="sid" required><option value="">Choose…</option>${[...S.suppliers].sort((a,b)=>a.name.localeCompare(b.name)).map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join("")}</select></label>
-      <label class="f"><span>Invoice no.</span><input name="inv"></label></div>
-      <div class="lines" id="lines">${lineRow()}</div>
-      <button type="button" class="btn quiet small" id="addl">+ Add product</button>
-      <div class="grid3" style="margin-top:14px"><label class="f"><span>Freight ₹</span><input name="freight" type="number" inputmode="decimal" min="0" step="any"></label>
-      <label class="f"><span>Unloading / other ₹</span><input name="other" type="number" inputmode="decimal" min="0" step="any"></label>
-      <label class="f"><span>Paid now ₹</span><input name="paid" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></label></div>
-      <label class="f"><span>Note</span><input name="note" placeholder="Optional"></label>`,
-      `<div class="total num" id="tot">₹0<small>&nbsp;</small></div><button class="btn" type="submit">Save purchase</button>`,
-      async fd => {
-        if(!fd.get("sid")) throw new Error("Choose a supplier.");
-        const items = readLines().filter(l=>l.productId&&l.qty>0).map(l=>({productId:l.productId,qty:l.qty,rate:l.rate}));
-        if(!items.length) throw new Error("Add at least one product with bags.");
-        await save("purchases",{date:fd.get("date"),supplierId:fd.get("sid"),invoiceNo:(fd.get("inv")||"").trim(),items,freight:num(fd.get("freight")),other:num(fd.get("other")),paid:num(fd.get("paid")),note:(fd.get("note")||"").trim()});
+  openBill(id){
+    const s = S.sales.find(x => x.id === id); if(!s) return;
+    const c = cust(s.customerId), due = saleDue(s);
+    const phone = (c?.phone || "").replace(/\D/g, ""), wa = phone.length === 10 ? "91" + phone : phone;
+    const text = `*${APP.shop.name}*\nBill ${billNo(s)} · ${fmtDate(s.date)}\n${saleWho(s)}\n\n` + (s.items || []).map(i => `${pname(i.productId)}: ${num(i.qty)} × ${inr(i.rate)} = ${inr(num(i.qty) * num(i.rate))}`).join("\n") +
+      (num(s.discount) ? `\nDiscount: −${inr(s.discount)}` : "") + `\n*Total: ${inr(saleTotal(s))}*\nPaid: ${inr(s.paid)}` + (due > 0.5 ? `\nBalance due: ${inr(due)}` : "") + `\n\nDhanyavaad!`;
+    openSheet({
+      title: `Bill ${billNo(s)}`, sub: `Entered by ${esc(memberName(s._by))}${s._uat && s._ub && s._ub !== s._by ? ` · edited by ${esc(memberName(s._ub))}` : ""}`,
+      body: `<div class="bill"><div class="bill-h"><div><b>${esc(APP.shop.name)}</b><div class="small muted">Fertilizer &amp; seed</div></div><div class="right"><div class="num" style="font-weight:700">${billNo(s)}</div><div class="small muted">${fmtDate(s.date)}</div></div></div>
+        <div style="margin-bottom:12px"><div class="small muted">Billed to</div><b>${esc(saleWho(s))}</b>${c ? `<div class="small muted">${esc([c.village, c.phone].filter(Boolean).join(" · "))}</div>` : ""}</div>
+        <div class="tw"><table class="t"><thead><tr><th>Product</th><th class="n">Bags</th><th class="n">Rate</th><th class="n">Amount</th></tr></thead><tbody>
+        ${(s.items || []).map(i => `<tr><td>${esc(pname(i.productId))}</td><td class="n">${num(i.qty)}</td><td class="n">${inr(i.rate)}</td><td class="n">${inr(num(i.qty) * num(i.rate))}</td></tr>`).join("")}</tbody>
+        <tfoot>${num(s.discount) ? `<tr><td colspan="3">Discount</td><td class="n">−${inr(s.discount)}</td></tr>` : ""}<tr><td colspan="3">Total</td><td class="n">${inr(saleTotal(s))}</td></tr><tr><td colspan="3" style="font-weight:500">Paid (${esc(s.mode || "")})</td><td class="n" style="font-weight:500">${inr(s.paid)}</td></tr>${due > 0.5 ? `<tr><td colspan="3" style="color:var(--bad)">Balance due</td><td class="n" style="color:var(--bad)">${inr(due)}</td></tr>` : ""}</tfoot></table></div>
+        ${s.note ? `<p class="small muted" style="margin:10px 0 0">Note: ${esc(s.note)}</p>` : ""}
+        ${seesProfit() ? `<p class="small muted" style="margin:10px 0 0">Internal: cost ${inr(saleCost(s))} · profit ${inr(saleProfit(s))}</p>` : ""}</div>`,
+      foot: `<div style="display:flex;gap:8px;flex-wrap:wrap">${canChange(s) ? `<button type="button" class="btn danger sm" data-act="delRec" data-id="${s.id}">${icon("trash")}Delete</button><button type="button" class="btn sec sm" data-act="editSale" data-id="${s.id}">${icon("edit")}Edit</button>` : ""}</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn sec sm" onclick="printBill()">${icon("print")}Print</button><a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/${wa}?text=${encodeURIComponent(text)}">${icon("whatsapp")}Send on WhatsApp</a></div>`
+    });
+  },
+  editSale(id){ ACT.newSale(id); },
+
+  newPurchase(id){
+    closeMenu();
+    if(!S.products.length || !S.suppliers.length){ alert(isManager() ? "Add products and suppliers first (Setup)." : "Ask the owner to add products and suppliers first."); return; }
+    const p = typeof id === "string" ? S.purchases.find(x => x.id === id) : null;
+    openSheet({
+      title: p ? "Edit purchase" : "New purchase", sub: "Stock received from a supplier",
+      body: `<div class="g3"><label class="f"><span>Date</span><input type="date" name="date" value="${p?.date || today()}" required></label>
+        <label class="f"><span>Supplier</span><select name="sid"><option value="">Select supplier…</option>${[...S.suppliers].sort((a, b) => a.name.localeCompare(b.name)).map(s => `<option value="${s.id}" ${p?.supplierId === s.id ? "selected" : ""}>${esc(s.name)}</option>`).join("")}</select></label>
+        <label class="f"><span>Invoice no.</span><input name="inv" value="${esc(p?.invoiceNo || "")}"></label></div>
+        ${linesBlock(p?.items)}
+        <div class="g3" style="margin-top:14px"><label class="f"><span>Freight ₹</span><input name="freight" type="number" inputmode="decimal" min="0" step="any" value="${p?.freight || ""}"></label>
+        <label class="f"><span>Unloading / other ₹</span><input name="other" type="number" inputmode="decimal" min="0" step="any" value="${p?.other || ""}"></label>
+        <label class="f"><span>Paid now ₹</span><input name="paid" type="number" inputmode="decimal" min="0" step="any" placeholder="0" value="${p ? num(p.paid) : ""}"></label></div>
+        <label class="f"><span>Note</span><input name="note" placeholder="Optional" value="${esc(p?.note || "")}"></label>`,
+      foot: `<div class="total num" id="tot">₹0<small>&nbsp;</small></div><div style="display:flex;gap:8px"><button type="button" class="btn sec" onclick="dlgEl.close()">Cancel</button><button class="btn" type="submit">${p ? "Save changes" : "Save purchase"}</button></div>`,
+      onSubmit: async fd => {
+        const sid = req(fd.get("sid"), "Select the supplier.");
+        const items = readLines().filter(l => l.productId && l.qty > 0).map(l => ({productId: l.productId, qty: l.qty, rate: l.rate}));
+        if(!items.length) throw new Error("Add at least one product with number of bags.");
+        if(items.some(i => i.rate <= 0)) throw new Error("Enter a rate for every product.");
+        await save("purchases", {...(p || {}), date: fd.get("date"), supplierId: sid, invoiceNo: (fd.get("inv") || "").trim(), items, freight: num(fd.get("freight")), other: num(fd.get("other")), paid: num(fd.get("paid")), note: (fd.get("note") || "").trim()}, p?.id);
+        toast(p ? "Purchase updated" : "Purchase saved · stock updated");
       },
-      () => {
-        const lines = readLines(); const q = lines.reduce((a,l)=>a+l.qty,0); const extra = num(sheet.freight.value)+num(sheet.other.value);
-        let sub=0;
-        lines.forEach(l=>{
-          const hint=l.el.querySelector(".hint");
-          if(l.productId && l.el.dataset.filled!==l.productId){ const r=l.el.querySelector("[name=rate]"); if(!r.value){ const lr=lastRate(l.productId,"purchases"); if(lr){ r.value=lr; l.rate=lr; } } l.el.dataset.filled=l.productId; }
-          sub+=l.qty*l.rate;
-          hint.textContent = l.productId && l.rate ? `landed cost ${inr(l.rate + (q?extra/q:0))}/bag · now ${stockOf(l.productId)} in stock` : "";
+      onInput: () => {
+        const lines = readLines(), q = lines.reduce((a, l) => a + l.qty, 0), extra = num(sheet.freight.value) + num(sheet.other.value);
+        let sub = 0;
+        lines.forEach(l => {
+          const hint = l.el.querySelector(".hint"), rEl = l.el.querySelector("[name=rate]");
+          if(l.productId && l.el.dataset.filled !== l.productId){ if(!rEl.value){ const lr = lastRate(l.productId, "purchases"); if(lr){ rEl.value = lr; l.rate = lr; } } l.el.dataset.filled = l.productId; }
+          sub += l.qty * l.rate; l.el.querySelector(".amt").textContent = inr(l.qty * l.rate);
+          hint.textContent = l.productId && l.rate ? `Landed cost ${inr(l.rate + (q ? extra / q : 0))}/bag · currently ${stockOf(l.productId)} in stock` : "";
         });
-        const total = sub+extra, paid=num(sheet.paid.value);
-        $("#tot").innerHTML = `${inr(total)}<small>${q} bags${total-paid>0.5?` · ${inr(total-paid)} payable`:""}</small>`;
-      });
-    $("#addl").onclick = () => { $("#lines").insertAdjacentHTML("beforeend", lineRow()); };
+        const total = sub + extra, paid = num(sheet.paid.value);
+        $("#tot").innerHTML = `${inr(total)}<small>${q} bags${total - paid > 0.5 ? ` · ${inr(total - paid)} payable` : ""}</small>`;
+      }
+    });
   },
+  openPurchase(id){
+    const p = S.purchases.find(x => x.id === id); if(!p) return;
+    const extra = num(p.freight) + num(p.other);
+    openSheet({
+      title: supName(p.supplierId), sub: `${fmtDate(p.date)}${p.invoiceNo ? " · Invoice " + esc(p.invoiceNo) : ""} · entered by ${esc(memberName(p._by))}`,
+      body: `<div class="tw"><table class="t"><thead><tr><th>Product</th><th class="n">Bags</th><th class="n">Rate</th><th class="n">Landed / bag</th><th class="n">Amount</th></tr></thead><tbody>
+        ${(p.items || []).map(i => `<tr><td>${esc(pname(i.productId))}</td><td class="n">${num(i.qty)}</td><td class="n">${inr(i.rate)}</td><td class="n">${inr(landedUnit(p, i))}</td><td class="n">${inr(num(i.qty) * num(i.rate))}</td></tr>`).join("")}</tbody>
+        <tfoot>${extra ? `<tr><td colspan="4">Freight &amp; unloading</td><td class="n">${inr(extra)}</td></tr>` : ""}<tr><td colspan="4">Total</td><td class="n">${inr(purTotal(p))}</td></tr><tr><td colspan="4" style="font-weight:500">Paid at purchase</td><td class="n" style="font-weight:500">${inr(p.paid)}</td></tr></tfoot></table></div>${p.note ? `<p class="small muted">Note: ${esc(p.note)}</p>` : ""}`,
+      foot: `<div style="display:flex;gap:8px">${canChange(p) ? `<button type="button" class="btn danger sm" data-act="delRec" data-id="${p.id}">${icon("trash")}Delete</button><button type="button" class="btn sec sm" data-act="editPurchase" data-id="${p.id}">${icon("edit")}Edit</button>` : ""}</div><button type="button" class="btn sec sm" data-act="newSupPay" data-id="${p.supplierId}">Record payment</button>`
+    });
+  },
+  editPurchase(id){ ACT.newPurchase(id); },
 
-  newReceipt(id){ payForm("customer", id); },
-  newSupPay(id){ payForm("supplier", id); },
+  newReceipt(id){ closeMenu(); payForm("customer", id); },
+  newSupPay(id){ closeMenu(); payForm("supplier", id); },
 
   newExpense(){
-    openSheet("Add expense", `
-      <div class="grid2"><label class="f"><span>Date</span><input type="date" name="date" value="${today()}" required></label>
-      <label class="f"><span>Type</span><select name="cat">${["Labour / hamali","Transport / freight","Rent","Electricity","Shop maintenance","Licence / fees","Salary","Tea & misc","Other"].map(c=>`<option>${c}</option>`).join("")}</select></label></div>
-      <label class="f"><span>Amount ₹</span><input name="amount" type="number" inputmode="decimal" min="0" step="any" required></label>
-      <label class="f"><span>Note</span><input name="note" placeholder="Optional"></label>`,
-      `<span></span><button class="btn" type="submit">Save expense</button>`,
-      async fd => { if(num(fd.get("amount"))<=0) throw new Error("Enter an amount."); await save("expenses",{date:fd.get("date"),category:fd.get("cat"),amount:num(fd.get("amount")),note:(fd.get("note")||"").trim()}); });
+    closeMenu();
+    openSheet({ title: "Add expense", narrow: true,
+      body: `<div class="g2"><label class="f"><span>Date</span><input type="date" name="date" value="${today()}" required></label>
+        <label class="f"><span>Type</span><select name="cat">${["Labour / hamali","Transport / freight","Rent","Electricity","Salary","Shop maintenance","Licence / fees","Tea & misc","Other"].map(c => `<option>${c}</option>`).join("")}</select></label></div>
+        <label class="f"><span>Amount ₹</span><input name="amount" type="number" inputmode="decimal" min="0" step="any"></label>
+        <label class="f"><span>Note</span><input name="note" placeholder="Optional"></label>`,
+      foot: `<span></span><div style="display:flex;gap:8px"><button type="button" class="btn sec" onclick="dlgEl.close()">Cancel</button><button class="btn" type="submit">Save expense</button></div>`,
+      onSubmit: async fd => { if(num(fd.get("amount")) <= 0) throw new Error("Enter the amount."); await save("expenses", {date: fd.get("date"), category: fd.get("cat"), amount: num(fd.get("amount")), note: (fd.get("note") || "").trim()}); toast("Expense saved"); } });
   },
 
   newAdjust(){
+    closeMenu();
     if(!S.products.length){ alert("Add products first."); return; }
-    openSheet("Adjust stock", `
-      <p class="sub">Use this for torn or wet bags, opening stock, or to match a physical count. Use a minus number to reduce stock.</p>
-      <div class="grid2"><label class="f"><span>Date</span><input type="date" name="date" value="${today()}" required></label>
-      <label class="f"><span>Product</span><select name="pid" required>${prodOptions()}</select></label></div>
-      <div class="grid2"><label class="f"><span>Bags (+ or −)</span><input name="qty" type="number" inputmode="decimal" step="any" required></label>
-      <label class="f"><span>Reason</span><select name="reason"><option>Damaged / torn bags</option><option>Physical count correction</option><option>Opening stock</option><option>Returned to supplier</option><option>Other</option></select></label></div>`,
-      `<span></span><button class="btn" type="submit">Save</button>`,
-      async fd => { if(!fd.get("pid")||!num(fd.get("qty"))) throw new Error("Choose a product and enter bags."); await save("adjustments",{date:fd.get("date"),productId:fd.get("pid"),qty:num(fd.get("qty")),reason:fd.get("reason")}); });
+    openSheet({ title: "Adjust stock", sub: "Torn or wet bags, opening stock, or matching a physical count", narrow: true,
+      body: `<label class="f"><span>Product</span><select name="pid">${prodOptions()}</select></label>
+        <div class="g2"><label class="f"><span>Date</span><input type="date" name="date" value="${today()}"></label>
+        <label class="f"><span>Bags (+ add, − remove)</span><input name="qty" type="number" inputmode="decimal" step="any" placeholder="e.g. -2"></label></div>
+        <label class="f"><span>Reason</span><select name="reason">${["Opening stock","Damaged / torn bags","Physical count correction","Returned to supplier","Other"].map(r => `<option>${r}</option>`).join("")}</select></label>`,
+      foot: `<span></span><div style="display:flex;gap:8px"><button type="button" class="btn sec" onclick="dlgEl.close()">Cancel</button><button class="btn" type="submit">Save</button></div>`,
+      onSubmit: async fd => { req(fd.get("pid"), "Select a product."); if(!num(fd.get("qty"))) throw new Error("Enter the number of bags."); await save("adjustments", {date: fd.get("date"), productId: fd.get("pid"), qty: num(fd.get("qty")), reason: fd.get("reason")}); toast("Stock adjusted"); } });
   },
 
-  newCustomer(){
-    openSheet("Add customer", `<label class="f"><span>Name</span><input name="name" required></label><div class="grid2"><label class="f"><span>Village</span><input name="village"></label><label class="f"><span>Phone</span><input name="phone" inputmode="tel"></label></div>`,
-      `<span></span><button class="btn" type="submit">Save</button>`,
-      async fd => save("customers",{name:fd.get("name").trim(),village:(fd.get("village")||"").trim(),phone:(fd.get("phone")||"").trim()}));
+  editCustomer(id){
+    closeMenu();
+    const c = id ? cust(id) : {};
+    openSheet({ title: id ? "Edit customer" : "New customer", narrow: true,
+      body: `<label class="f"><span>Name</span><input name="name" value="${esc(c.name || "")}"></label><div class="g2"><label class="f"><span>Village</span><input name="village" value="${esc(c.village || "")}"></label><label class="f"><span>Mobile</span><input name="phone" inputmode="tel" value="${esc(c.phone || "")}"></label></div>`,
+      foot: `<span></span><div style="display:flex;gap:8px"><button type="button" class="btn sec" onclick="dlgEl.close()">Cancel</button><button class="btn" type="submit">Save</button></div>`,
+      onSubmit: async fd => { await save("customers", {name: req(fd.get("name"), "Enter the name."), village: (fd.get("village") || "").trim(), phone: (fd.get("phone") || "").trim()}, id); toast("Customer saved"); } });
   },
 
   editProduct(id){
+    if(!isManager()) return;
     const p = id ? P(id) : {};
-    openSheet(id?"Edit product":"Add product", `
-      <label class="f"><span>Name</span><input name="name" value="${esc(p.name||"")}" required placeholder="e.g. Urea (NFL)"></label>
-      <div class="grid2"><label class="f"><span>Category</span><select name="category">${["Fertilizer","Seed","Pesticide","Other"].map(c=>`<option ${p.category===c?"selected":""}>${c}</option>`).join("")}</select></label>
-      <label class="f"><span>Bag size (kg)</span><input name="bagKg" type="number" inputmode="decimal" step="any" value="${p.bagKg??""}"></label></div>
-      <div class="grid2"><label class="f"><span>MRP per bag ₹</span><input name="mrp" type="number" inputmode="decimal" step="any" value="${p.mrp??""}" placeholder="Warns if you sell above it"></label>
-      <label class="f"><span>Reorder when below (bags)</span><input name="lowStock" type="number" inputmode="numeric" step="any" value="${p.lowStock??10}"></label></div>
-      <label class="f"><span><input type="checkbox" name="hidden" style="width:auto;min-height:0;margin-right:6px" ${p.active===false?"checked":""}>Hide from lists (no longer sold)</span></label>`,
-      `${id?`<button type="button" class="btn danger small" id="delp">Delete</button>`:"<span></span>"}<button class="btn" type="submit">Save</button>`,
-      async fd => save("products",{name:fd.get("name").trim(),category:fd.get("category"),bagKg:num(fd.get("bagKg")),mrp:num(fd.get("mrp")),lowStock:num(fd.get("lowStock")),active:!fd.get("hidden"),createdAt:p.createdAt}, id));
+    openSheet({ title: id ? "Edit product" : "Add product", narrow: true,
+      body: `<label class="f"><span>Product name</span><input name="name" value="${esc(p.name || "")}" placeholder="e.g. Urea (NFL)"></label>
+        <div class="g2"><label class="f"><span>Category</span><select name="category">${["Fertilizer","Seed","Pesticide","Other"].map(c => `<option ${p.category === c ? "selected" : ""}>${c}</option>`).join("")}</select></label>
+        <label class="f"><span>Bag size (kg)</span><input name="bagKg" type="number" inputmode="decimal" step="any" value="${p.bagKg || ""}"></label></div>
+        <div class="g2"><label class="f"><span>MRP per bag ₹</span><input name="mrp" type="number" inputmode="decimal" step="any" value="${p.mrp || ""}"><small>Sales above MRP are flagged</small></label>
+        <label class="f"><span>Reorder level (bags)</span><input name="lowStock" type="number" inputmode="numeric" step="any" value="${p.lowStock ?? 10}"></label></div>
+        <label class="f" style="display:flex;gap:8px;align-items:center"><input type="checkbox" name="hidden" ${p.active === false ? "checked" : ""}><span style="margin:0">Hide from lists (no longer sold)</span></label>`,
+      foot: `${id ? `<button type="button" class="btn danger sm" id="delp">${icon("trash")}Delete</button>` : "<span></span>"}<div style="display:flex;gap:8px"><button type="button" class="btn sec" onclick="dlgEl.close()">Cancel</button><button class="btn" type="submit">Save</button></div>`,
+      onSubmit: async fd => { await save("products", {name: req(fd.get("name"), "Enter the product name."), category: fd.get("category"), bagKg: num(fd.get("bagKg")), mrp: num(fd.get("mrp")), lowStock: num(fd.get("lowStock")), active: !fd.get("hidden")}, id); toast("Product saved"); } });
     if(id) $("#delp").onclick = async () => {
-      const used = S.purchases.some(x=>(x.items||[]).some(i=>i.productId===id)) || S.sales.some(x=>(x.items||[]).some(i=>i.productId===id));
-      if(used){ alert("This product has purchases or sales. Tick “Hide from lists” instead so your history stays correct."); return; }
-      if(confirm("Delete this product?")){ await removeDoc("products/"+id); dlg.close(); }
+      const used = S.purchases.some(x => (x.items || []).some(i => i.productId === id)) || S.sales.some(x => (x.items || []).some(i => i.productId === id)) || S.adjustments.some(a => a.productId === id);
+      if(used){ alert("This product has transactions. Tick “Hide from lists” instead so your history stays correct."); return; }
+      if(confirm("Delete this product?")){ await removeRec(id); dlgEl.close(); }
     };
   },
 
   editSupplier(id){
-    const s = id ? S.suppliers.find(x=>x.id===id) : {};
-    openSheet(id?"Edit supplier":"Add supplier", `
-      <label class="f"><span>Name</span><input name="name" value="${esc(s.name||"")}" required placeholder="e.g. NFL dealership"></label>
-      <div class="grid2"><label class="f"><span>Type</span><select name="type">${["Company dealership","Market / wholesaler","Other"].map(c=>`<option ${s.type===c?"selected":""}>${c}</option>`).join("")}</select></label>
-      <label class="f"><span>Phone</span><input name="phone" inputmode="tel" value="${esc(s.phone||"")}"></label></div>
-      <label class="f"><span>Products supplied</span><input name="products" value="${esc(s.products||"")}" placeholder="Optional"></label>`,
-      `<span></span><button class="btn" type="submit">Save</button>`,
-      async fd => save("suppliers",{name:fd.get("name").trim(),type:fd.get("type"),phone:(fd.get("phone")||"").trim(),products:(fd.get("products")||"").trim(),createdAt:s.createdAt}, id));
+    if(!isManager()) return;
+    const s = id ? S.suppliers.find(x => x.id === id) : {};
+    openSheet({ title: id ? "Edit supplier" : "Add supplier", narrow: true,
+      body: `<label class="f"><span>Supplier name</span><input name="name" value="${esc(s.name || "")}" placeholder="e.g. NFL dealership"></label>
+        <div class="g2"><label class="f"><span>Type</span><select name="type">${["Company dealership","Market / wholesaler","Other"].map(c => `<option ${s.type === c ? "selected" : ""}>${c}</option>`).join("")}</select></label>
+        <label class="f"><span>Phone</span><input name="phone" inputmode="tel" value="${esc(s.phone || "")}"></label></div>
+        <label class="f"><span>Products supplied</span><input name="products" value="${esc(s.products || "")}" placeholder="Optional"></label>`,
+      foot: `<span></span><div style="display:flex;gap:8px"><button type="button" class="btn sec" onclick="dlgEl.close()">Cancel</button><button class="btn" type="submit">Save</button></div>`,
+      onSubmit: async fd => { await save("suppliers", {name: req(fd.get("name"), "Enter the supplier name."), type: fd.get("type"), phone: (fd.get("phone") || "").trim(), products: (fd.get("products") || "").trim()}, id); toast("Supplier saved"); } });
   },
 
   ledger(key){
-    const [k,id] = key.split(":"); const isC = k==="c";
-    const party = isC ? S.customers.find(c=>c.id===id) : S.suppliers.find(s=>s.id===id);
-    if(!party) return;
-    let rows = [];
+    const [k, id] = key.split(":"), isC = k === "c";
+    const party = isC ? cust(id) : S.suppliers.find(s => s.id === id); if(!party) return;
+    const rows = [];
     if(isC){
-      S.sales.filter(s=>s.customerId===id).forEach(s=>rows.push({d:s.date,c:s.createdAt,t:(s.items||[]).map(i=>`${i.qty} × ${pname(i.productId)}`).join(", "),dr:saleTotal(s),cr:num(s.paid)}));
-      S.payments.filter(p=>p.kind==="customer"&&p.partyId===id).forEach(p=>rows.push({d:p.date,c:p.createdAt,t:`Payment received (${p.mode||""})${p.note?" · "+p.note:""}`,dr:0,cr:num(p.amount),pid:p.id}));
+      S.sales.filter(s => s.customerId === id).forEach(s => rows.push({d: s.date, at: s._at, t: `Bill ${billNo(s)} · ${itemsText(s.items)}`, dr: saleTotal(s), cr: num(s.paid), open: `openBill`, oid: s.id}));
+      S.payments.filter(p => p.kind === "customer" && p.partyId === id).forEach(p => rows.push({d: p.date, at: p._at, t: `Payment received · ${p.mode || ""}${p.note ? " · " + p.note : ""}`, dr: 0, cr: num(p.amount), pay: p}));
     } else {
-      S.purchases.filter(p=>p.supplierId===id).forEach(p=>rows.push({d:p.date,c:p.createdAt,t:`Purchase${p.invoiceNo?" inv "+p.invoiceNo:""} · ${itemsQty(p.items)} bags`,dr:purTotal(p),cr:num(p.paid)}));
-      S.payments.filter(p=>p.kind==="supplier"&&p.partyId===id).forEach(p=>rows.push({d:p.date,c:p.createdAt,t:`Payment made (${p.mode||""})${p.note?" · "+p.note:""}`,dr:0,cr:num(p.amount),pid:p.id}));
+      S.purchases.filter(p => p.supplierId === id).forEach(p => rows.push({d: p.date, at: p._at, t: `Purchase${p.invoiceNo ? " · inv " + p.invoiceNo : ""} · ${itemsQty(p.items)} bags`, dr: purTotal(p), cr: num(p.paid), open: "openPurchase", oid: p.id}));
+      S.payments.filter(p => p.kind === "supplier" && p.partyId === id).forEach(p => rows.push({d: p.date, at: p._at, t: `Payment made · ${p.mode || ""}${p.note ? " · " + p.note : ""}`, dr: 0, cr: num(p.amount), pay: p}));
     }
-    rows.sort((a,b)=>(a.d||"").localeCompare(b.d||"")||(a.c||0)-(b.c||0));
-    let bal=0; rows.forEach(r=>{ bal+=r.dr-r.cr; r.b=bal; });
-    const phone = (party.phone||"").replace(/\D/g,"");
-    openSheet(esc(party.name), `
-      <p class="sub">${esc([party.village,party.phone].filter(Boolean).join(" · "))}</p>
-      <div class="tablewrap"><table><thead><tr><th>Date / details</th><th>${isC?"Bill":"Bill"}</th><th>Paid</th><th>Balance</th><th></th></tr></thead><tbody>
-      ${rows.length?rows.map(r=>`<tr><td style="white-space:normal">${fmtDate(r.d)}<br><span style="color:var(--muted);font-size:13px">${esc(r.t)}</span></td><td class="num">${r.dr?inr0(r.dr):""}</td><td class="num">${r.cr?inr0(r.cr):""}</td><td class="num">${inr0(r.b)}</td><td>${r.pid?`<button type="button" class="x" aria-label="Delete payment" data-act="delPay" data-id="${r.pid}">×</button>`:""}</td></tr>`).join(""):`<tr><td colspan="5" style="text-align:center;color:var(--muted)">No entries</td></tr>`}
-      </tbody></table></div>`,
-      `<div class="total num">${inr0(Math.abs(bal))}<small>${bal>0.5?(isC?"owes you":"you owe"):bal<-0.5?"advance":"settled"}</small></div>
-       <div class="row">${isC&&phone&&bal>0.5?`<a class="btn ghost" style="text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/${phone.length===10?"91"+phone:phone}?text=${encodeURIComponent(`Namaste ${party.name} ji, Malhan Trading Company me aapka ${inr0(bal)} baaki hai. Kripya jaldi jama karein. Dhanyavaad.`)}">WhatsApp reminder</a>`:""}
-       <button type="button" class="btn" id="payhere">${isC?"Receive payment":"Pay"}</button></div>`,
-      async () => {});
-    $("#payhere").onclick = () => { dlg.close(); payForm(isC?"customer":"supplier", id); };
+    rows.sort((a, b) => (a.d || "").localeCompare(b.d || "") || String(a.at || "").localeCompare(String(b.at || "")));
+    let bal = 0; rows.forEach(r => { bal += r.dr - r.cr; r.b = bal; });
+    const phone = (party.phone || "").replace(/\D/g, ""), wa = phone.length === 10 ? "91" + phone : phone;
+    openSheet({
+      title: esc(party.name), sub: esc([party.village, party.phone, isC ? "" : party.type].filter(Boolean).join(" · ")),
+      body: `<div class="kpis" style="grid-template-columns:repeat(3,1fr);margin-bottom:14px">
+          <div class="card kpi"><div class="l">${isC ? "Total billed" : "Total purchased"}</div><div class="v num" style="font-size:18px">${inr0(rows.reduce((a, r) => a + r.dr, 0))}</div></div>
+          <div class="card kpi"><div class="l">Total paid</div><div class="v num" style="font-size:18px">${inr0(rows.reduce((a, r) => a + r.cr, 0))}</div></div>
+          <div class="card kpi"><div class="l">Balance</div><div class="v num" style="font-size:18px;${bal > 0.5 ? "color:var(--bad)" : ""}">${bal < -0.5 ? inr0(-bal) + " adv." : inr0(bal)}</div></div></div>
+        <div class="tw"><table class="t stackable"><thead><tr><th>Date</th><th>Details</th><th class="n">${isC ? "Billed" : "Purchased"}</th><th class="n">Paid</th><th class="n">Balance</th><th></th></tr></thead><tbody>
+        ${rows.length ? rows.map(r => `<tr ${r.open ? `class="click" data-act="${r.open}" data-id="${r.oid}"` : ""}><td data-l="Date">${fmtDate(r.d)}</td><td class="lead"><div class="sub" style="color:var(--ink-2)">${esc(r.t)}</div></td><td class="n" data-l="${isC ? "Billed" : "Purchased"}">${r.dr ? inr0(r.dr) : "—"}</td><td class="n" data-l="Paid">${r.cr ? inr0(r.cr) : "—"}</td><td class="n" data-l="Balance"><b>${inr0(r.b)}</b></td><td class="n">${r.pay && canChange(r.pay) ? `<button type="button" class="icon-btn" aria-label="Delete payment" data-act="delRec" data-id="${r.pay.id}">${icon("trash")}</button>` : ""}</td></tr>`).join("") : `<tr><td colspan="6" class="empty">No entries yet</td></tr>`}
+        </tbody></table></div>`,
+      foot: `<div style="display:flex;gap:8px">${isC ? `<button type="button" class="btn ghost sm" data-act="editCustomer" data-id="${id}">${icon("edit")}Edit details</button>` : ""}</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">${isC && wa && bal > 0.5 ? `<a class="btn sec sm" target="_blank" rel="noopener" href="https://wa.me/${wa}?text=${encodeURIComponent(`Namaste ${party.name} ji,\n${APP.shop.name} mein aapka ${inr(bal)} baaki hai. Kripya jaldi jama karein.\nDhanyavaad.`)}">${icon("whatsapp")}Send reminder</a>` : ""}
+        <button type="button" class="btn sm" data-act="${isC ? "newReceipt" : "newSupPay"}" data-id="${id}">${icon("rupee")}${isC ? "Receive payment" : "Record payment"}</button></div>`
+    });
   },
-  async delPay(id){ if(!confirm("Delete this payment?")) return; try{ await removeDoc("payments/"+id); dlg.close(); }catch(e){ alert(e.message); } },
 
-  async backupJson(){
-    const data = {exportedAt:new Date().toISOString()}; COLS.forEach(c=>data[c]=S[c]);
-    if(await download(`malhan-backup-${today()}.json`, JSON.stringify(data,null,2), "application/json")){ await setLast(Date.now()); render(); }
-  },
-  restore(){ $("#restoreFile").click(); },
-  csvMonth(){ download(`malhan-sales-${reportMonth}.csv`, salesCsv(S.sales.filter(s=>monthOf(s.date)===reportMonth))); },
-  csvAll(){ download(`malhan-sales-all-${today()}.csv`, salesCsv(S.sales)); },
-  csvStock(){
-    const rows=[["Product","Category","Bag kg","In stock","Avg landed cost","Stock value","MRP"]];
-    S.products.forEach(p=>rows.push([p.name,p.category,p.bagKg,stockOf(p.id),avgCost(p.id).toFixed(2),(Math.max(0,stockOf(p.id))*avgCost(p.id)).toFixed(2),p.mrp]));
-    download(`malhan-stock-${today()}.csv`, toCsv(rows));
-  }
+  backupJson(){ const data = {app: "malhan", version: 2, exportedAt: new Date().toISOString(), shop: APP.shop.name}; COLS.forEach(c => data[c] = S[c].map(({_by, _at, _ub, _uat, _dirty, ...r}) => r));
+    download(`malhan-backup-${today()}.json`, JSON.stringify(data, null, 2), "application/json"); },
+  importBackup(){ $("#importFile").click(); },
+  csvMonth(){ download(`malhan-sales-${APP.f.reportMonth}.csv`, salesCsv(S.sales.filter(s => monthOf(s.date) === APP.f.reportMonth))); },
+  csvAll(){ download(`malhan-sales-${today()}.csv`, salesCsv(S.sales)); },
+  csvStock(){ const rows = [["Product","Category","Bag kg","In stock","Reorder level","Avg landed cost","Stock value","MRP"]];
+    S.products.forEach(p => rows.push([p.name, p.category, p.bagKg, stockOf(p.id), p.lowStock, avgCost(p.id).toFixed(2), (Math.max(0, stockOf(p.id)) * avgCost(p.id)).toFixed(2), p.mrp]));
+    download(`malhan-stock-${today()}.csv`, toCsv(rows)); },
+  csvKhata(){ const rows = [["Type","Name","Village","Phone","Balance"]];
+    S.customers.forEach(c => rows.push(["Customer", c.name, c.village, c.phone, custBalance(c.id).toFixed(2)]));
+    S.suppliers.forEach(s => rows.push(["Supplier", s.name, "", s.phone, supBalance(s.id).toFixed(2)]));
+    download(`malhan-khata-${today()}.csv`, toCsv(rows)); }
 };
+window.setRole = async (u, r) => { const { error } = await APP.sb.from("members").update({role: r}).eq("shop_id", APP.shop.id).eq("user_id", u); if(error) alert(error.message); else { await loadMembers(); toast("Role updated"); } };
+window.printBill = () => { document.body.classList.add("printing"); window.print(); setTimeout(() => document.body.classList.remove("printing"), 500); };
 
 function payForm(kind, preset){
-  const isC = kind==="customer";
-  const parties = (isC?S.customers:S.suppliers).map(x=>({...x,b:isC?custBalance(x.id):supBalance(x.id)})).sort((a,b)=>b.b-a.b);
-  if(!parties.length){ alert(isC?"No customers yet.":"No suppliers yet."); return; }
-  openSheet(isC?"Receive payment":"Pay supplier", `
-    <label class="f"><span>${isC?"Customer":"Supplier"}</span><select name="party" required>${parties.map(p=>`<option value="${p.id}" ${p.id===preset?"selected":""}>${esc(p.name)}${p.b>0.5?` — ${inr0(p.b)} due`:""}</option>`).join("")}</select></label>
-    <div class="grid3"><label class="f"><span>Date</span><input type="date" name="date" value="${today()}" required></label>
-    <label class="f"><span>Amount ₹</span><input name="amount" type="number" inputmode="decimal" min="0" step="any" required></label>
-    <label class="f"><span>Mode</span><select name="mode"><option>Cash</option><option>UPI</option><option>Bank transfer</option><option>Cheque</option></select></label></div>
-    <label class="f"><span>Note</span><input name="note" placeholder="Optional"></label>`,
-    `<span></span><button class="btn" type="submit">Save</button>`,
-    async fd => { if(num(fd.get("amount"))<=0) throw new Error("Enter an amount."); await save("payments",{kind,partyId:fd.get("party"),date:fd.get("date"),amount:num(fd.get("amount")),mode:fd.get("mode"),note:(fd.get("note")||"").trim()}); });
+  const isC = kind === "customer";
+  const parties = (isC ? S.customers : S.suppliers).map(x => ({...x, b: isC ? custBalance(x.id) : supBalance(x.id)})).sort((a, b) => b.b - a.b || a.name.localeCompare(b.name));
+  if(!parties.length){ alert(isC ? "No customers yet." : "No suppliers yet."); return; }
+  openSheet({ title: isC ? "Receive payment" : "Pay supplier", sub: isC ? "Udhaar collected from a customer" : "Payment made to a supplier", narrow: true,
+    body: `<label class="f"><span>${isC ? "Customer" : "Supplier"}</span><select name="party">${parties.map(p => `<option value="${p.id}" ${p.id === preset ? "selected" : ""}>${esc(p.name)}${p.b > 0.5 ? ` — ${inr0(p.b)} due` : ""}</option>`).join("")}</select></label>
+      <div class="g2"><label class="f"><span>Date</span><input type="date" name="date" value="${today()}"></label><label class="f"><span>Amount ₹</span><input name="amount" type="number" inputmode="decimal" min="0" step="any"></label></div>
+      <div class="g2"><label class="f"><span>Mode</span><select name="mode"><option>Cash</option><option>UPI</option><option>Bank transfer</option><option>Cheque</option></select></label><label class="f"><span>Note</span><input name="note" placeholder="Optional"></label></div>`,
+    foot: `<span></span><div style="display:flex;gap:8px"><button type="button" class="btn sec" onclick="dlgEl.close()">Cancel</button><button class="btn" type="submit">Save payment</button></div>`,
+    onSubmit: async fd => { if(num(fd.get("amount")) <= 0) throw new Error("Enter the amount."); await save("payments", {kind, partyId: fd.get("party"), date: fd.get("date"), amount: num(fd.get("amount")), mode: fd.get("mode"), note: (fd.get("note") || "").trim()}); toast("Payment saved"); } });
 }
 
-function toCsv(rows){ return rows.map(r=>r.map(v=>{ const s=String(v??""); return /[",\n]/.test(s)?`"${s.replace(/"/g,'""')}"`:s; }).join(",")).join("\n"); }
+function toCsv(rows){ return "\ufeff" + rows.map(r => r.map(v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; }).join(",")).join("\n"); }
 function salesCsv(list){
-  const rows=[["Date","Customer","Product","Bags","Rate","Line total","Cost/bag","Profit","Bill discount","Bill paid","Mode"]];
-  [...list].sort((a,b)=>(a.date||"").localeCompare(b.date||"")).forEach(s=>(s.items||[]).forEach((i,k)=>rows.push([s.date,s.customerId?custName(s.customerId):"Walk-in",pname(i.productId),i.qty,i.rate,num(i.qty)*num(i.rate),i.cost,(num(i.qty)*(num(i.rate)-num(i.cost))).toFixed(2),k?"":s.discount,k?"":s.paid,k?"":s.mode])));
+  const rows = [["Date","Bill","Customer","Village","Product","Bags","Rate","Line amount","Bill discount","Bill total","Bill paid","Mode","Entered by", ...(seesProfit() ? ["Cost per bag","Line profit"] : [])]];
+  [...list].sort((a, b) => (a.date || "").localeCompare(b.date || "")).forEach(s => (s.items || []).forEach((i, k) => rows.push([s.date, billNo(s), saleWho(s), cust(s.customerId)?.village || "", pname(i.productId), i.qty, i.rate, r2(num(i.qty) * num(i.rate)), k ? "" : num(s.discount), k ? "" : r2(saleTotal(s)), k ? "" : num(s.paid), k ? "" : s.mode, memberName(s._by), ...(seesProfit() ? [i.cost, r2(num(i.qty) * (num(i.rate) - num(i.cost)))] : [])])));
   return toCsv(rows);
 }
-async function download(filename, text, type="text/csv"){
-  if(NATIVE){ try{ return !!(await native({type:"share", filename, text})); }catch(e){ alert("Couldn't share the file."); return false; } }
+async function download(filename, text, type = "text/csv;charset=utf-8"){
   const blob = new Blob([text], {type});
-  try{
-    const file = new File([blob], filename, {type});
-    if(navigator.canShare && navigator.canShare({files:[file]}) && /iPhone|iPad|Android/i.test(navigator.userAgent)){
-      await navigator.share({files:[file], title:filename}); return true;
-    }
-  }catch(e){ if(e.name==="AbortError") return false; }
-  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=filename; document.body.appendChild(a); a.click();
-  setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); }, 2000); return true;
+  try{ const file = new File([blob], filename, {type});
+    if(navigator.canShare && navigator.canShare({files: [file]}) && /iPhone|iPad|Android/i.test(navigator.userAgent)){ await navigator.share({files: [file], title: filename}); return; } }
+  catch(e){ if(e.name === "AbortError") return; }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = filename; document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
 }
-async function restoreFrom(file){
+async function importFrom(file){
   if(!file) return;
-  try{
-    const data = JSON.parse(await file.text());
-    if(!COLS.every(c=>Array.isArray(data[c]||[]))||!data.products) throw new Error();
-    if(!confirm(`Replace ALL data on this device with the backup from ${data.exportedAt?new Date(data.exportedAt).toLocaleString("en-IN"):"this file"}? (${(data.sales||[]).length} sales, ${(data.purchases||[]).length} purchases)`)) return;
-    COLS.forEach(c=>S[c]=data[c]||[]); await setLast(Date.now()); go("home"); alert("Backup restored.");
-  }catch(e){ alert("That file isn't a valid Malhan backup."); }
+  let data; try{ data = JSON.parse(await file.text()); }catch(e){ return alert("That file isn't a valid backup."); }
+  const cols = COLS.filter(c => Array.isArray(data[c]));
+  const total = cols.reduce((a, c) => a + data[c].length, 0);
+  if(!total) return alert("No records found in that file.");
+  if(!confirm(`Import ${total} records into ${APP.shop.name}? Records already in the shop with the same ID will be overwritten by the file's version.`)) return;
+  const recs = [];
+  cols.forEach(c => data[c].forEach(r => { if(!r || !r.id) return; const {id, createdAt, ...rest} = r; const prev = REC.get(id);
+    recs.push({id, collection: c, data: rest, deleted: false, created_by: prev?.created_by || APP.user.id, created_at: prev?.created_at || new Date().toISOString(), updated_by: APP.user.id, updated_at: prev?.updated_at || null, dirty: 1, v: (prev?.v || 0) + 1}); }));
+  recs.forEach(r => REC.set(r.id, r)); await idbPut(recs); rebuild(); render(); schedulePush();
+  toast(`Imported ${recs.length} records · syncing`, 4000);
+}
+
+/* ---------- Auth & onboarding ---------- */
+function authShell(inner){
+  $("#root").innerHTML = `<div class="auth"><div class="auth-l"><div class="org" style="padding:0"><div class="logo">M</div><div><b>${esc(CFG.shopName || "Malhan Trading Company")}</b><span>Shop management</span></div></div>
+    <div><h2>Every bag, bill and rupee — in one place.</h2><p>Sales, purchases, stock and udhaar, shared live between everyone in the shop. Works without internet and syncs when you're back online.</p></div>
+    <p class="small">Private to your shop. Only people you invite can see your records.</p></div>
+    <div class="auth-r"><div class="auth-card">${inner}</div></div></div>`;
+}
+function showSetupNeeded(){
+  authShell(`<h3>One-time setup needed</h3><p class="muted">This app isn't connected to your shop's database yet.</p>
+    <ol class="small" style="padding-left:18px;line-height:1.7"><li>Create a free project at supabase.com</li><li>Run <b>schema.sql</b> in its SQL Editor</li><li>Put the project URL and anon key in <b>config.js</b></li><li>Upload config.js to your GitHub repository</li></ol>
+    <p class="small muted">See SETUP.md for step-by-step instructions.</p>`);
+}
+function showSignIn(mode = "signin", msg = ""){
+  const up = mode === "signup";
+  authShell(`<h3>${up ? "Create your account" : "Sign in"}</h3><p class="muted">${up ? "Each person in the shop uses their own account." : "Welcome back."}</p>
+    <form id="authForm" novalidate>
+      ${up ? `<label class="f"><span>Your name</span><input name="name" autocomplete="name" required></label>` : ""}
+      <label class="f"><span>Email</span><input name="email" type="email" autocomplete="email" inputmode="email" required></label>
+      <label class="f"><span>Password</span><input name="password" type="password" autocomplete="${up ? "new-password" : "current-password"}" minlength="6" required>${up ? "<small>At least 6 characters</small>" : ""}</label>
+      <div class="err" id="aerr" style="margin-bottom:10px">${esc(msg)}</div>
+      <button class="btn" style="width:100%" type="submit">${up ? "Create account" : "Sign in"}</button>
+    </form>
+    <p class="small" style="margin-top:16px">${up ? `Already have an account? <button class="link" id="swap">Sign in</button>` : `New here? <button class="link" id="swap">Create an account</button> · <button class="link" id="forgot">Forgot password</button>`}</p>`);
+  $("#swap").onclick = () => showSignIn(up ? "signin" : "signup");
+  if($("#forgot")) $("#forgot").onclick = async () => { const email = $("#authForm").email.value.trim(); if(!email) return $("#aerr").textContent = "Enter your email above first.";
+    const { error } = await APP.sb.auth.resetPasswordForEmail(email, {redirectTo: location.origin + location.pathname}); $("#aerr").textContent = error ? error.message : "Check your email for a reset link."; };
+  $("#authForm").onsubmit = async e => {
+    e.preventDefault(); const f = e.target, btn = f.querySelector("button[type=submit]"); $("#aerr").textContent = ""; btn.disabled = true;
+    try{
+      const email = f.email.value.trim(), password = f.password.value;
+      if(!email || !password) throw new Error("Enter your email and password.");
+      if(up){
+        const name = f.elements["name"].value.trim(); if(!name) throw new Error("Enter your name.");
+        const { data, error } = await APP.sb.auth.signUp({email, password, options: {data: {display_name: name}, emailRedirectTo: location.origin + location.pathname}});
+        if(error) throw error;
+        localStorage.setItem("malhan-pending-name", name);
+        if(!data.session) return showSignIn("signin", "Account created. Check your email to confirm, then sign in.");
+      } else {
+        const { error } = await APP.sb.auth.signInWithPassword({email, password}); if(error) throw error;
+      }
+      await afterAuth();
+    }catch(err){ $("#aerr").textContent = err.message === "Invalid login credentials" ? "Email or password is incorrect." : (err.message || "Something went wrong"); }
+    finally{ btn.disabled = false; }
+  };
+}
+function showOnboarding(msg = ""){
+  const name = APP.user.user_metadata?.display_name || localStorage.getItem("malhan-pending-name") || "";
+  authShell(`<h3>Join your shop</h3><p class="muted">Signed in as ${esc(APP.user.email)}</p>
+    <form id="joinForm" novalidate><label class="f"><span>Your name</span><input name="name" value="${esc(name)}"></label>
+      <label class="f"><span>Join code</span><input name="code" autocapitalize="characters" autocomplete="off" placeholder="8 characters from the owner" style="letter-spacing:.1em;text-transform:uppercase"></label>
+      <div class="err" id="jerr" style="margin-bottom:10px">${esc(msg)}</div><button class="btn" style="width:100%" type="submit">Join shop</button></form>
+    <details style="margin-top:22px"><summary class="small" style="cursor:pointer;font-weight:600">I'm the owner — set up the shop</summary>
+      <form id="createForm" novalidate style="margin-top:12px"><label class="f"><span>Shop name</span><input name="shop" value="${esc(CFG.shopName || "Malhan Trading Company")}"></label>
+      <div class="err" id="cerr" style="margin-bottom:10px"></div><button class="btn sec" style="width:100%" type="submit">Create shop</button>
+      <p class="small muted">Only works once. After that, everyone joins with the code.</p></form></details>
+    <p class="small" style="margin-top:18px"><button class="link" id="so">Sign out</button></p>`);
+  $("#so").onclick = () => signOut(true);
+  $("#joinForm").onsubmit = async e => { e.preventDefault(); const f = e.target; $("#jerr").textContent = "";
+    const n = f.elements["name"].value.trim(), c = f.elements["code"].value.trim(); if(!n || !c) return $("#jerr").textContent = "Enter your name and the join code.";
+    const { error } = await APP.sb.rpc("join_shop", {code: c, member_name: n}); if(error) return $("#jerr").textContent = error.message; await afterAuth(); };
+  $("#createForm").onsubmit = async e => { e.preventDefault(); const n = $("#joinForm").elements["name"].value.trim(), s = e.target.elements["shop"].value.trim(); $("#cerr").textContent = "";
+    if(!n) return $("#cerr").textContent = "Enter your name above."; if(!s) return $("#cerr").textContent = "Enter the shop name.";
+    const { error } = await APP.sb.rpc("create_shop", {shop_name: s, owner_name: n}); if(error) return $("#cerr").textContent = error.message; APP.firstRun = true; await afterAuth(); };
+}
+function showNewPassword(){
+  authShell(`<h3>Set a new password</h3><form id="pwForm" novalidate><label class="f"><span>New password</span><input name="pw" type="password" minlength="6" autocomplete="new-password"></label><div class="err" id="perr" style="margin-bottom:10px"></div><button class="btn" style="width:100%" type="submit">Save password</button></form>`);
+  $("#pwForm").onsubmit = async e => { e.preventDefault(); const pw = e.target.pw.value; if(pw.length < 6) return $("#perr").textContent = "At least 6 characters.";
+    const { error } = await APP.sb.auth.updateUser({password: pw}); if(error) return $("#perr").textContent = error.message; await afterAuth(); };
+}
+const memberCacheKey = () => "malhan-member-" + APP.user.id;
+function cacheMembership(){ try{ localStorage.setItem(memberCacheKey(), JSON.stringify({member: APP.member, shop: APP.shop})); }catch(e){} }
+async function afterAuth(){
+  const { data: { session } } = await APP.sb.auth.getSession();
+  if(!session){ showSignIn(); return; }
+  APP.user = session.user;
+  let found = null;
+  if(online()){
+    const { data, error } = await APP.sb.from("members").select("*, shops(id, name, join_code)").eq("user_id", APP.user.id).eq("active", true).limit(1);
+    if(!error && data && data.length){ const m = data[0]; found = {member: {shop_id: m.shop_id, user_id: m.user_id, role: m.role, display_name: m.display_name, email: m.email, active: m.active}, shop: m.shops}; }
+    else if(!error){ const cached = localStorage.getItem(memberCacheKey()); if(cached) localStorage.removeItem(memberCacheKey()); showOnboarding(); return; }
+  }
+  if(!found){ try{ found = JSON.parse(localStorage.getItem(memberCacheKey()) || "null"); }catch(e){} }
+  if(!found){ showOnboarding(online() ? "" : "You're offline. Connect to the internet to join your shop."); return; }
+  APP.member = found.member; APP.shop = found.shop; cacheMembership();
+  await openShop();
+}
+async function openShop(){
+  idb = await idbOpen(idbName());
+  (await idbAll()).forEach(r => REC.set(r.id, r));
+  APP.members = (await metaGet("members")) || [APP.member];
+  rebuild();
+  APP.view = "dashboard";
+  render();
+  if(navigator.storage?.persist) navigator.storage.persist().catch(() => {});
+  await loadMembers();
+  await syncNow();
+  if(APP.firstRun && isOwner() && !S.products.length && !S.suppliers.length) await seedDefaults();
+  startRealtime();
+}
+async function seedDefaults(){
+  const prods = [["Urea",45,20],["DAP",50,20],["SSP",50,20],["TSP",50,10],["Sulphur",0,10],["Ammonium sulphate",50,10]];
+  for(const [name, bagKg, lowStock] of prods) await save("products", {name, category: "Fertilizer", bagKg, mrp: 0, lowStock, active: true});
+  await save("suppliers", {name: "NFL", type: "Company dealership", phone: "", products: "Urea, DAP, SSP, TSP, Sulphur, Ammonium sulphate"});
+  await save("suppliers", {name: "Seed market", type: "Market / wholesaler", phone: "", products: "Seeds"});
+  toast("Shop created with your products and suppliers. Set MRPs under Products.", 5000);
+}
+async function signOut(force = false){
+  closeMenu();
+  const n = APP.shop ? pendingCount() : 0;
+  if(!force && n && !confirm(`${n} change${n > 1 ? "s haven't" : " hasn't"} synced yet and will be lost if you sign out now. Sign out anyway?`)) return;
+  if(!force && !n && !confirm("Sign out? Shop data will be removed from this device (it stays safe in the shop's database).")) return;
+  try{ if(channel) APP.sb.removeChannel(channel); }catch(e){}
+  if(idb){ const name = idb.name; idb.close(); idb = null; indexedDB.deleteDatabase(name); }
+  if(APP.user) localStorage.removeItem(memberCacheKey());
+  REC.clear(); rebuild(); APP.shop = null; APP.member = null; APP.members = []; AUDIT = null;
+  try{ await APP.sb.auth.signOut(); }catch(e){}
+  showSignIn();
 }
 
 /* ---------- Boot ---------- */
-const DEFAULTS = {
-  products:[["urea","Urea",45,20],["dap","DAP",50,20],["ssp","SSP",50,20],["tsp","TSP",50,10],["sulphur","Sulphur",0,10],["ammonium-sulphate","Ammonium sulphate",50,10]]
-    .map(([id,name,bagKg,lowStock],i)=>({id,name,category:"Fertilizer",bagKg,mrp:0,lowStock,active:true,createdAt:i+1})),
-  suppliers:[{id:"nfl",name:"NFL",type:"Company dealership",phone:"",products:"Urea, DAP, SSP, TSP, Sulphur, Ammonium sulphate",createdAt:1},{id:"seed-market",name:"Seed market",type:"Market / wholesaler",phone:"",products:"Seeds",createdAt:2}]
-};
-render();
-(async () => {
-  try{
-    let data;
-    if(NATIVE){ const json = await native({type:"load"}); data = json ? JSON.parse(json) : null; }
-    else { idb = await openIdb(); data = await idbGet("state"); }
-    if(data && data.meta) Object.assign(META, data.meta);
-    if(data){ COLS.forEach(c=>S[c]=data[c]||[]); }
-    else { S.products=DEFAULTS.products; S.suppliers=DEFAULTS.suppliers; await persist(); }
-    dbState="on";
-    if(navigator.storage?.persist) navigator.storage.persist().catch(()=>{});
-  }catch(e){ dbState="off"; }
-  render();
-  if("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(()=>{});
+(async function boot(){
+  if(!CFG.supabaseUrl || !CFG.supabaseAnonKey || !window.supabase){ showSetupNeeded(); return; }
+  APP.sb = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseAnonKey, {auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}});
+  APP.sb.auth.onAuthStateChange((event) => { if(event === "PASSWORD_RECOVERY") setTimeout(showNewPassword, 0); });
+  $("#root").innerHTML = `<div class="empty" style="padding-top:30vh">Loading…</div>`;
+  try{ await afterAuth(); }catch(e){ console.error(e); showSignIn("signin", online() ? "Couldn't connect. Please try again." : "You're offline."); }
+  if("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
 })();
 </script>
 </body>
